@@ -7,6 +7,17 @@
 
 .filter-container {}
 
+.filter-container-loader {
+    position: absolute;
+    top: 150px;
+    left: 250px;
+}
+
+.filter-loader-hidden {
+    display: none;
+    visibility: hidden;
+}
+
 .filter-label {
     display: block;
     margin-bottom: 8px;
@@ -20,7 +31,15 @@
 }
 
 .clear-button {
+    width: 100%;
     text-align: right;
+    display: flex;
+    justify-content: right;
+    gap: 0 4px;
+}
+
+.clear-button-text {
+    font-weight: 500;
 }
 
 .filters-container {
@@ -30,5 +49,5 @@
 .clear-button-icon {
     width: 16px;
     height: 16px;
-    fill: black;
+    stroke: var(--color-green);
 }

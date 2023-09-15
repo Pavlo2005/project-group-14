@@ -74,7 +74,7 @@ body {
   padding: 0 20px;
 }
 
-.section-title {
+.title {
   font-family: 'Inter-600';
   font-size: 14px;
   line-height: 1.28;
@@ -83,7 +83,7 @@ body {
 .text {
   font-family: 'Inter-400';
   font-size: 12px;
-  line-height: 1.33;
+  line-height: 1.16;
 }
 
 @media screen and (min-width: 415px) {

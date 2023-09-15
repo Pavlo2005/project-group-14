@@ -2,6 +2,7 @@ import { servicesList } from "./services-list";
 import { createList } from "./create-list";
 
 const elements = {
+    loader: document.querySelector('.filter-loader'),
     searchForm: document.getElementById('searchForm'),
     input: document.getElementById('search'),
     time: document.getElementById('time'),
@@ -26,8 +27,8 @@ async function addIngredients() {
     elements.ingredients.insertAdjacentHTML('beforeend', await createList(data));
 
     elements.searchForm.hidden = false;
+    elements.loader.classList.replace('filter-loader', 'filter-loader-hidden');
 }
-
 
 elements.searchForm.addEventListener('change', handlerChange);
 
