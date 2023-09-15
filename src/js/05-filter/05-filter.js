@@ -6,7 +6,8 @@ const elements = {
     input: document.getElementById('search'),
     time: document.getElementById('time'),
     area: document.getElementById('area'),
-    ingredients: document.getElementById('ingredients')
+    ingredients: document.getElementById('ingredients'),
+    clearButton: document.getElementById('clearButton')
 }
 
 addAreas();
@@ -23,6 +24,8 @@ async function addIngredients() {
     const data = await servicesList('ingredients');
 
     elements.ingredients.insertAdjacentHTML('beforeend', await createList(data));
+
+    elements.searchForm.hidden = false;
 }
 
 
@@ -35,4 +38,15 @@ function handlerChange() {
     const ingredientsValue = elements.ingredients.value;
 
     console.log(`Пошук: ${inputValue}, Час: ${timeValue}, Регіон: ${areaValue}, Інгредієнти: ${ingredientsValue}`);
+}
+
+elements.clearButton.addEventListener('click', handlerClick);
+
+function handlerClick() {
+    console.log('+')
+
+    elements.area.value = "";
+    elements.ingredients.value = "";
+    elements.input.value = "";
+    elements.time.value = "";
 }

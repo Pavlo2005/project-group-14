@@ -1,50 +1,50 @@
 <section class="filter">
-    <form id="searchForm">
-        <div>
-            <label for="search">Search</label>
-            <input type="text" id="search" name="search">
-        </div>
-
-        <div>
-            <label for="time">Time</label>
-            <select id="time" name="time">
-                <option value=""></option>
-                <option value="10">10 min</option>
-                <option value="20">20 min</option>
-                <option value="30">30 min</option>
-                <option value="40">40 min</option>
-                <option value="50">50 min</option>
-                <option value="60">60 min</option>
-                <option value="70">1 hour</option>
-                <option value="80">1 hour 10 min</option>
-                <option value="90">1 hour 20 min</option>
-                <option value="100">1 hour 30 min</option>
-                <option value="110">1 hour 40 min</option>
-                <option value="120">1 hour 50 min</option>
-            </select>
-        </div>
-
-        <div>
-            <label for="area">Area</label>
-            <select id="area" name="area">
-                <option value=""></option>
-            </select>
-        </div>
-
-        <div>
-            <label for="ingredients">Ingredients</label>
-            <select id="ingredients" name="ingredients">
-                <option value=""></option>
-            </select>
-        </div>
-
-        <div>
-            <svg class="clear-button-icon">
-                  <use href="./img/icons.svg#icon-cross"></use>
-            </svg>
-            <div class="clear-button" id="clearButton">Reset the filter</div>
-        </div>
-    </form>
+    <div class="container">
+        <form id="searchForm" hidden>
+            <div class="filters-container">
+                <div class="filter-container">
+                    <label class="filter-label" for="search">Search</label>
+                    <input class="filter-input" type="text" id="search" name="search">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="time">Time</label>
+                    <select class="filter-input" id="time" name="time">
+                        <option value=""></option>
+                        <option value="10">10 min</option>
+                        <option value="20">20 min</option>
+                        <option value="30">30 min</option>
+                        <option value="40">40 min</option>
+                        <option value="50">50 min</option>
+                        <option value="60">60 min</option>
+                        <option value="70">1 hour</option>
+                        <option value="80">1 hour 10 min</option>
+                        <option value="90">1 hour 20 min</option>
+                        <option value="100">1 hour 30 min</option>
+                        <option value="110">1 hour 40 min</option>
+                        <option value="120">1 hour 50 min</option>
+                    </select>
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="area">Area</label>
+                    <select class="filter-input" id="area" name="area">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="ingredients">Ingredients</label>
+                    <select class="filter-input" id="ingredients" name="ingredients">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="clear-button">
+                <svg class="clear-button-icon">
+                  <use href="./img/icon.svg#icon-cross"></use>
+                </svg>
+                <div  id="clearButton">Reset the filter</div>
+            </div>
+        </form>
+    </div>
 
     <script type="module" src="./js/05-filter/05-filter.js"></script>
 </section>

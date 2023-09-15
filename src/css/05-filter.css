@@ -1,0 +1,43 @@
+.filters-container {
+    width: 335px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 14px;
+}
+
+.filter-container {}
+
+.filter-label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.filter-input {
+    padding: 14px 18px;
+
+    border-radius: 15px;
+    border: 1px solid rgba(5, 5, 5, 0.20);
+}
+
+.filter-input option:checked {
+    color: #333;
+    max-height: 180px;
+    border-radius: 14px;
+    background: #FFF;
+    box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+}
+
+.clear-button {
+    text-align: right;
+}
+
+.filters-container {
+    margin-bottom: 14px;
+}
+
+.clear-button-icon {
+    width: 16px;
+    height: 16px;
+    fill: black;
+    border: 1px solid black;
+}
