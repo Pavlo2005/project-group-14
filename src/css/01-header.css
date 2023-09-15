@@ -23,8 +23,9 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  
 }
+
+
 
 @media screen and (max-width: 768px) {
   .nav-container {
@@ -48,6 +49,12 @@
 
 .header-menu{
   fill: black;
+}
+
+@media screen and (max-width: 768px) {
+  .switcher-icon {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
