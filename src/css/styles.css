@@ -67,6 +67,7 @@ body {
 
 body {
   color: var(--color-text);
+  font-family: 'Inter-400';
 }
 
 .container {
