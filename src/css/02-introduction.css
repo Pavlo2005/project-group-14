@@ -1,3 +1,23 @@
+.hero-title {
+  color: #050505;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .title-part {
   color: #9bb537;
+}
+@font-face {
+  font-family: 'Inter-600';
+  src: url('../fonts/Inter-SemiBold.eot');
+  src: url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff'),
+    url('../fonts/Inter-SemiBold.ttf') format('truetype'),
+    url('../fonts/Inter-SemiBold.svg') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
