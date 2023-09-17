@@ -1,6 +1,7 @@
 /* 
 TODO: font to :root
 TODO: @media for container paddings
+TODO: 2 types of grey for dark and light
 */
 
 .fav-hero-container {
@@ -11,6 +12,7 @@ TODO: @media for container paddings
   height: 516px;
   border-radius: 15px;
   margin: 0 auto 40px;
+  display: none;
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -22,6 +24,9 @@ TODO: @media for container paddings
     width: 704px;
     height: 356px;
     background-image: url(/img/favorites/favorites_hero_tablet.avif);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -45,13 +50,17 @@ TODO: @media for container paddings
 
 .fav-categories {
   width: 100%;
-  display: flex;
-  align-items: flex-start;
+  /* display: flex; */
+  display: none;
   gap: 12px;
   font-family: Inter;
   margin-bottom: 24px;
   margin-right: auto;
   overflow: hidden;
+
+  @media only screen and (min-width: 768px) {
+    gap: 15px;
+  }
 }
 
 .fav-category {
@@ -96,7 +105,6 @@ TODO: @media for container paddings
 
 .fav-recipes {
   display: flex;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   gap: 24px;
 
@@ -109,4 +117,76 @@ TODO: @media for container paddings
   @media only screen and (min-width: 1200px) {
     gap: 16px 32px;
   }
+}
+
+.fav-none {
+  color: var(--color-text);
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29em;
+  vertical-align: middle;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+@media only screen and (min-width: 768px) {
+  .fav-none {
+    width: 481px;
+    margin: 0 auto;
+    transform: none;
+    font-size: 16px;
+    line-height: 1.5em; /* 150% */
+  }
+}
+
+.fav-none-icon {
+  margin-bottom: 24px;
+}
+
+/* Main container for Favorites */
+.favorites {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 375px) {
+  .favorites {
+    max-width: 375px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .favorites {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .favorites {
+    max-width: 1280px;
+    padding: 0 100px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.card {
+  width: 400px;
+  border: 1px solid #9bb537;
 }
