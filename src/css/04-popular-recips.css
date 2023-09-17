@@ -95,6 +95,8 @@
 }
 
 .precipes-marcup-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .precipes-marcup-title-text {
