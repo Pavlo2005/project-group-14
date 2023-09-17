@@ -13,28 +13,32 @@ fetch("https://tasty-treats-backend.p.goit.global/api/events")
 
             slide.innerHTML = `
                 <div class="chief">
-                    <img class="chief-avatar" src="${event.chiefAvatar}" alt="chief" />
+                    <img class="chief-avatar" src="${event.cook.imgUrl}" alt="${event.cook.name}" />
                 </div>
                 <div class="dish">
-                    <img class="dish-img" src="${event.dishImg}" alt="dish" />
-                    <h2 class="dish-title">${event.dishTitle}</h2>
-                    <p class="dish-origin">${event.dishOrigin}</p>
+                    <img class="dish-img" src="${event.topic.imgUrl}" alt="${event.topic.name}" />
+                    <h2 class="dish-title">${event.topic.name}</h2>
+                    <p class="dish-origin">${event.topic.area}</p>
                 </div>
                 <div class="preview">
-                    <img class="preview-img" src="${event.previewImg}" alt="preview" />
+                    <img class="preview-img" src="${event.topic.previewUrl}" alt="${event.topic.name} Preview" />
                 </div>
             `;
+
 
             swiperWrapper.appendChild(slide);
         });
 
-
+        // Ініціалізуємо Swiper тільки після створення слайдів
         const swiper = new Swiper(".swiper", {
-
+            // Налаштування Swiper
             slidesPerView: 1,
         });
 
-
+        // Приклад використання swiper для автоматичного переходу до наступного слайду кожні 3 секунди
+        setInterval(() => {
+            swiper.slideNext();
+        }, 3000);
 
     })
     .catch(error => {
