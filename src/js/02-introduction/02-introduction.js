@@ -1,5 +1,6 @@
-import Swiper from 'swiper/swiper-bundle.min.js';
-import 'swiper/swiper-bundle.min.css';
+import Swiper from 'swiper';
+
+
 
 const baseUrl = 'https://tasty-treats-backend.p.goit.global/api';
 
@@ -38,9 +39,7 @@ fetch(`${baseUrl}/events`)
             slidesPerView: 1,
         });
 
-        setInterval(() => {
-            swiper.slideNext();
-        }, 3000);
+
 
     })
     .catch(error => {
