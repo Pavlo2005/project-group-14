@@ -24,6 +24,7 @@
   --color-white: #ffffff;
   --color-gray: #F8F8F8;
   --color-text: rgba(5, 5, 5, 0.80);
+  --color-solihth-text: rgba(5, 5, 5, 0.50);
   --color-light-text: rgba(5, 5, 5, 0.3);
   --color-light-border: rgba(5, 5, 5, 0.2);
   --color-border-grey: rgba(255, 255, 255, 0.20);
@@ -53,6 +54,17 @@
 }
 
 @font-face {
+  font-family: 'Inter-500';
+  src: url('../fonts/Inter-Medium.eot');
+  src: url('../fonts/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/Inter-Medium.woff') format('woff'),
+    url('../fonts/Inter-Medium.ttf') format('truetype'),
+    url('../fonts/Inter-Medium.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Inter-600';
   src: url('../fonts/Inter-SemiBold.eot');
   src: url('../fonts/Inter-SemiBold.woff2') format('woff2'),
@@ -60,6 +72,17 @@
     url('../fonts/Inter-SemiBold.ttf') format('truetype'),
     url('../fonts/Inter-SemiBold.svg') format('svg');
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-700';
+  src: url('../fonts/Inter-Bold.eot');
+  src: url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff'),
+    url('../fonts/Inter-Bold.ttf') format('truetype'),
+    url('../fonts/Inter-Bold.svg') format('svg');
+  font-weight: 700;
   font-style: normal;
 }
 
