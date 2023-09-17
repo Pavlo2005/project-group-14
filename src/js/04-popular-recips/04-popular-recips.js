@@ -1,8 +1,6 @@
 const popRecipesList = document.querySelector('.js-popular-recipes');
 let data;
 
-popRecipesList.addEventListener('click', haidenPopRecipesInfo);
-
 popRecipesFitchList();
 
 // ========================функція запросу з бекенду
@@ -35,7 +33,9 @@ async function popRecipesFitchList() {
 }
 
 // ========================функція вибору рецепту та повернення id рецепту
-function haidenPopRecipesInfo(evn) {
+popRecipesList.addEventListener('click', handlerClick);
+
+function handlerClick(evn) {
   const currentDish = evn.target.closest('.js-open-dish').dataset.id;
   console.log(currentDish);
   return currentDish;
