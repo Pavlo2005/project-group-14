@@ -38,43 +38,51 @@ let ingredientsSelect;
 addAreas();
 
 async function addAreas() {
-    const data = await servicesList('areas');
+    try {
+        const data = await servicesList('areas');
 
-    elements.area.insertAdjacentHTML('beforeend', await createList(data));
+        elements.area.insertAdjacentHTML('beforeend', await createList(data));
 
-    areaSelect = new SlimSelect({
-        select: area,
-        settings: {
-            showSearch: false,
-            placeholderText: "area",
-        },
-        events: {
-            afterChange: () => {
-                handlerChange();
+        areaSelect = new SlimSelect({
+            select: area,
+            settings: {
+                showSearch: false,
+                placeholderText: "area",
+            },
+            events: {
+                afterChange: () => {
+                    handlerChange();
+                }
             }
-        }
-    });
+        });
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 addIngredients();
 
 async function addIngredients() {
-    const data = await servicesList('ingredients');
+    try {
+        const data = await servicesList('ingredients');
 
-    elements.ingredients.insertAdjacentHTML('beforeend', await createList(data));
+        elements.ingredients.insertAdjacentHTML('beforeend', await createList(data));
 
-    ingredientsSelect = new SlimSelect({
-        select: ingredients,
-        settings: {
-            showSearch: false,
-            placeholderText: "ingredients",
-        },
-        events: {
-            afterChange: () => {
-                handlerChange();
+        ingredientsSelect = new SlimSelect({
+            select: ingredients,
+            settings: {
+                showSearch: false,
+                placeholderText: "ingredients",
+            },
+            events: {
+                afterChange: () => {
+                    handlerChange();
+                }
             }
-        }
-    });
+        });
+    } catch (err) {
+        console.log(err);
+    }
 
     // прибирання лоадера після загрузки контенту
 
