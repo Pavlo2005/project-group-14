@@ -1,0 +1,141 @@
+.precipes-title {
+  /* Basic styles */
+  max-width: 335px;
+}
+
+@media only screen and (min-width: 768px) {
+  .precipes-title {
+    width: 176px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .precipes-title {
+    width: 235px;
+  }
+}
+
+.precipes-title-text {
+  /* Basic styles */
+  padding-bottom: 20px;
+
+  color: #050505;
+  font-family: 'Inter-600';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1, 33;
+}
+
+@media only screen and (min-width: 768px) {
+  .precipes-title-text {
+    padding-bottom: 32px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .precipes-title-text {
+    font-size: 24px;
+    line-height: 1, 167;
+  }
+}
+
+.precipes-list {
+  /* Basic styles */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 160px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+  .precipes-list {
+    gap: 16px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .precipes-list {
+    gap: 32px;
+  }
+}
+
+.precipes-marcup {
+  /* Basic styles */
+  display: flex;
+  gap: 8px;
+  height: 68px;
+  width: auto;
+}
+@media only screen and (min-width: 1280px) {
+  .precipes-marcup {
+    gap: 16px;
+  }
+}
+
+.precipes-marcup-img {
+  /* Basic styles */
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .precipes-marcup-img {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .precipes-marcup-img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.precipes-marcup-title {
+}
+
+.precipes-marcup-title-text {
+  /* Basic styles */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: #050505;
+  font-family: 'Inter-600';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1, 286;
+
+  padding-bottom: 8px;
+}
+
+.precipes-marcup-text {
+  /* Basic styles */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  color: rgba(5, 5, 5, 0.8);
+  font-family: 'Inter-400';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1, 33;
+}
+
+@media only screen and (min-width: 768px) {
+  .precipes-marcup-text {
+    -webkit-line-clamp: 3;
+
+    font-size: 10px;
+    font-style: normal;
+    line-height: 1, 4;
+  }
+}
+@media only screen and (min-width: 1280px) {
+}
