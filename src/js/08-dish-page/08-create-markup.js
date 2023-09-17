@@ -44,9 +44,6 @@ function createMurkupDP(recipe) {
         </li>`);
   }
 
-  console.log(ratingList.join(''));
-  ratingList.join('');
-
   const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
   const favoriteBtn = favoritesLS.find(({ _id }) => _id === recipe._id)
     ? 'Remove from favorite'
@@ -65,7 +62,7 @@ function createMurkupDP(recipe) {
     <div class="recipe-modal-rating">
       <ul class="recipe-modal-tag-list desktop">${tagsList}</ul>
       <p class="recipe-modal-rating-number">${rating}</p>
-      <ul class="recipe-modal-rating-list">${ratingList}</ul>
+      <ul class="recipe-modal-rating-list">${ratingList.join('')}</ul>
       <p class="recipe-modal-cooking-time">${time} min</p>
     </div>
     <table class="recipe-modal-table">${ingredientsList}</table>

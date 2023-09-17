@@ -12,12 +12,14 @@ favoritList.addEventListener('click', evt => {
   onClick(evt);
 });
 
-dishList.addEventListener('click', evt => {
-  if (!evt.target.classList.contains('js-open-dish-button')) {
-    return;
-  }
-  onClick(evt);
-});
+if (dishList) {
+  dishList.addEventListener('click', evt => {
+    if (!evt.target.classList.contains('js-open-dish-button')) {
+      return;
+    }
+    onClick(evt);
+  });
+}
 
 function onClick(evt) {
   const currentDish = evt.target.closest('.js-open-dish');
@@ -32,30 +34,31 @@ function onClick(evt) {
 
       overlay.classList.remove('is-hidden');
 
-      addFavoriteBtn.addEventListener('click', (evt) => {
+      addFavoriteBtn.addEventListener('click', evt => {
         evt.target.textContent = changeBtnText(recipeDish._id);
-        changeFavorites(recipeDish)
+        changeFavorites(recipeDish);
       });
-     
+
       closeBtn.addEventListener('click', () => overlay.remove());
-      overlay.addEventListener('click', (evt) => {
+      overlay.addEventListener('click', evt => {
         const modalWindow = evt.target.closest('.js-recipe-modal');
         if (!modalWindow) {
           overlay.remove();
         }
-      })
-      
-      document.addEventListener("keydown", ({ code }) => {
-        if (code === "Escape") {
+      });
+
+      document.addEventListener('keydown', ({ code }) => {
+        if (code === 'Escape') {
           overlay.remove();
         }
-      })
+      });
     })
     .catch(err => console.log(err));
 }
 
-function changeBtnText(id){
+function changeBtnText(id) {
   const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
   return favoritesLS.find(({ _id }) => _id === id)
-  ? 'Add to favorite' : 'Remove from favorite';
-};
+    ? 'Add to favorite'
+    : 'Remove from favorite';
+}

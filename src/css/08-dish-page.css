@@ -19,8 +19,6 @@
 }
 
 .recipe-modal {
-  /* Пізніше box-sizing видалити */
-  box-sizing: border-box;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -66,7 +64,7 @@
 .recipe-modal-close-icon {
   width: 20px;
   height: 20px;
-  stroke: #050505;
+  stroke: var(--color-black2);
 }
 
 @media only screen and (min-width: 768px) {
@@ -90,7 +88,7 @@
 .recipe-modal-title {
   margin-bottom: 14px;
   font-family: 'Inter-600';
-  color: #050505;
+  color: var(--color-black2);
   font-size: 18px;
   line-height: 1.33;
   text-transform: uppercase;
@@ -120,7 +118,7 @@
 .recipe-modal-rating-number {
   margin-right: 6px;
 
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--color-solihth-text);
   font-family: 'Inter-500';
   font-size: 14px;
   line-height: 1.28;
@@ -147,7 +145,7 @@
 }
 
 .recipe-modal-cooking-time {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--color-solihth-text);
   font-family: 'Inter-500';
   font-size: 14px;
   line-height: 1.28;
@@ -169,7 +167,7 @@
 }
 
 .table-ingredient {
-  color: #050505;
+  color: var(--color-black2);
   font-family: 'Inter-400';
   font-size: 14px;
   line-height: 1.28;
@@ -177,7 +175,7 @@
 
 .table-amount {
   text-align: right;
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--color-solihth-text);
   font-family: 'Inter-400';
   font-size: 14px;
 
@@ -224,7 +222,7 @@
 
 .recipe-modal-tag-item {
   padding: 8px 16px;
-  color: #050505;
+  color: var(--color-black2);
 
   font-family: 'Inter-500';
   font-size: 12px;
@@ -258,7 +256,7 @@
 }
 
 .recipe-modal-button.favorite {
-  margin-right: 16px;
+  margin-right: 13px;
   color: #f8f8f8;
   border: none;
   background-color: var(--color-green);
@@ -267,11 +265,11 @@
 
 .recipe-modal-button.favorite:focus,
 .recipe-modal-button.favorite:hover {
-  color: #050505;
+  color: var(--color-black2);
 }
 
 .recipe-modal-button.rating {
-  color: #050505;
+  color: var(--color-black2);
   background-color: transparent;
   border: 1px solid var(--color-green);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -283,4 +281,10 @@
   border: 1px solid transparent;
   background-color: var(--color-green);
   color: #f8f8f8;
+}
+
+@media only screen and (min-width: 768px) {
+  .recipe-modal-button.favorite {
+    margin-right: 16px;
+  }
 }
