@@ -1,10 +1,16 @@
 import Swiper from 'swiper/swiper-bundle.min.js';
 import 'swiper/swiper-bundle.min.css';
 
-fetch("https://tasty-treats-backend.p.goit.global/api/events")
-    .then(response => response.json())
-    .then(data => {
+const baseUrl = 'https://tasty-treats-backend.p.goit.global/api';
 
+fetch(`${baseUrl}/events`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
         const swiperWrapper = document.querySelector(".swiper-wrapper");
 
         data.forEach(event => {
@@ -25,13 +31,10 @@ fetch("https://tasty-treats-backend.p.goit.global/api/events")
                 </div>
             `;
 
-
             swiperWrapper.appendChild(slide);
         });
 
-
         const swiper = new Swiper(".swiper", {
-            // Налаштування Swiper
             slidesPerView: 1,
         });
 
