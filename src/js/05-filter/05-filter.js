@@ -15,6 +15,8 @@ const elements = {
     clearButton: document.getElementById('clearButton')
 }
 
+// Оголошення SlimSelect зміних
+
 let timeSelect = new SlimSelect({
     select: time,
     settings: {
@@ -31,14 +33,14 @@ let timeSelect = new SlimSelect({
 let areaSelect;
 let ingredientsSelect;
 
+// Створення випадаючих списків
+
 addAreas();
 
 async function addAreas() {
     const data = await servicesList('areas');
 
     elements.area.insertAdjacentHTML('beforeend', await createList(data));
-
-    // areaSelect.setData(await createList(data));
 
     areaSelect = new SlimSelect({
         select: area,
@@ -74,11 +76,15 @@ async function addIngredients() {
         }
     });
 
+    // прибирання лоадера після загрузки контенту
+
     elements.searchForm.hidden = false;
     elements.loader.classList.replace('filter-loader', 'filter-loader-hidden');
 }
 
 elements.searchForm.addEventListener('change', handlerChange);
+
+// функція відслідковування змін в полях воду
 
 function handlerChange() {
     const inputValue = elements.input.value;
@@ -90,6 +96,8 @@ function handlerChange() {
 }
 
 elements.clearButton.addEventListener('click', handlerClickClear);
+
+// функція видалення вмісту з полів воду
 
 function handlerClickClear() {
 
