@@ -29,13 +29,12 @@ fetch("https://tasty-treats-backend.p.goit.global/api/events")
             swiperWrapper.appendChild(slide);
         });
 
-        // Ініціалізуємо Swiper тільки після створення слайдів
+
         const swiper = new Swiper(".swiper", {
             // Налаштування Swiper
             slidesPerView: 1,
         });
 
-        // Приклад використання swiper для автоматичного переходу до наступного слайду кожні 3 секунди
         setInterval(() => {
             swiper.slideNext();
         }, 3000);
