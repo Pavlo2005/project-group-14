@@ -16,9 +16,9 @@ const elements = {
   categories: document.querySelector(".fav-categories")
 }
 
-toot(localFavorites)
+serviceFavorites(localFavorites)
 
-function toot(favs) {
+async function serviceFavorites(favs) {
   // checking if there's any data in localStorage
   if (!favs || !favs[0]) {
     console.log("nothing here");
@@ -28,15 +28,34 @@ function toot(favs) {
   elements.hero.style.display = "flex";
   elements.categories.style.display = "flex";
 
-  favs.forEach(recipe =>
-    getRecipeByID(recipe)
-      .then((data) => {
-        console.log(data);
-        elements.recipes.insertAdjacentHTML("beforeend", renderFavorites(data))
-      })
-      .catch((err) => console.log(err))
-  )
+  try {
+    const data = await getRecipesByID(favs);
+    // console.log(data);
+
+    elements.recipes.insertAdjacentHTML("beforeend", renderFavorites(data))
+    elements.categories.insertAdjacentHTML("beforeend", renderCategories(data))
+
+  } catch (error) {
+    console.log(error);
+  }
 }
+
+
+async function getRecipesByID(arr) {
+  const responses = arr.map(async id => {
+    const resp = await fetch(`https://tasty-treats-backend.p.goit.global/api/recipes/${id}`);
+    if (!resp.ok) {
+      return Promise.reject(resp.statusText);
+    }
+    return resp.json();
+  })
+  const data = await Promise.allSettled(responses);
+
+  return data
+    .filter(({ status }) => status === "fulfilled")
+    .map(({ value }) => value);
+}
+
 
 
 async function getRecipeByID(id) {
@@ -47,13 +66,24 @@ async function getRecipeByID(id) {
   return resp.json();
 }
 
+function renderCategories(data) {
+  const markup = data.map(({ category }) =>
+    `<li class="fav-categories-item">
+        <a href="#" class="fav-category cat-inactive">${category}</a>
+      </li>`).filter((category, idx, arr) => arr.indexOf(category) === idx).join('')
+  return markup;
+}
+
 function renderFavorites(data) {
-  const { description, preview, rating, title } = data;
-  const markup =
+  console.log(data);
+  const markup = data.map(({ description, preview, rating, title }) =>
     `<div class="card">
     <img src="${preview}">
     <p>${title}</p>
     <p>${description}</p>
-    <p>${rating}</p>`
+    <p>${rating}</p>
+    </div>`
+  ).join('')
+
   return markup;
 }
