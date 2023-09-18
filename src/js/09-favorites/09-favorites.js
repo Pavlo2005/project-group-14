@@ -4,6 +4,8 @@ TODO: clicking on card opens the recipe popup
 TODO: adding and removing from favorites on heart click
 TODO: 
 */
+import {createMarkupRecipe} from "../11-recipe-card/11-recipe-card"
+
 
 // const favoriteRecipes = ["6462a8f74c3d0ddd288980d4", "6462a8f74c3d0ddd28897fc1", "6467fb9d3d8125271a59219e", "6462a8f74c3d0ddd28897fbc", "6462a8f74c3d0ddd28897fb9", "6462a8f74c3d0ddd28897fdf", "6462a8f74c3d0ddd28897fc2"]
 // localStorage.setItem("favorites", JSON.stringify(favoriteRecipes));
@@ -32,7 +34,7 @@ async function serviceFavorites(favs) {
     const data = await getRecipesByID(favs);
     // console.log(data);
 
-    elements.recipes.insertAdjacentHTML("beforeend", renderFavorites(data))
+    elements.recipes.insertAdjacentHTML("beforeend", createMarkupRecipe(data))
     elements.categories.insertAdjacentHTML("beforeend", renderCategories(data))
 
   } catch (error) {
