@@ -1,12 +1,12 @@
 export function createMarkupRecipe(data) {
-    const markup = data
-      .map(({
-          preview,
-          title,
-          description,
-          rating,
-      }) => {
-        return `<div class="recipe-card-container" style="background-image: url('${preview}')">
+  const markup = data
+    .map(({
+      preview,
+      title,
+      description,
+      rating,
+    }) => {
+      return `<div class="recipe-card-container js-open-dish" style="background-image: url('${preview}')" data-id="ідентифікатор рецепту">
               <svg class="recipe-icon-heart" width="22" height="22">
                 <use href="/img/icon.svg#icon-heart"></use>
               </svg>
@@ -29,10 +29,10 @@ export function createMarkupRecipe(data) {
                     <svg class="recipe-icon-rating" width="18" height="18">
                       <use href="/img/icon.svg#icon-star"></use>
                     </svg>
-                  <button class="recipe-btn">See recipe</button>
+                  <button class="recipe-btn js-open-dish-button">See recipe</button>
               </div>
           </div>`;
-      })
-      .join('');
-    return markup;
-  }
+    })
+    .join('');
+  return markup;
+}

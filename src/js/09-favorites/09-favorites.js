@@ -1,5 +1,6 @@
 /* 
 TODO: adding and removing from favorites on heart click
+TODO: spread the categories to the screen edge
 */
 
 import { createMarkupRecipe } from "../11-recipe-card/11-recipe-card"
