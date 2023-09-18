@@ -52,7 +52,7 @@ form.addEventListener('submit', (e) => {
 });
 
 function sendOrderToBackend(name, phone, email, comment) {
-  const backendUrl = 'https://tasty-treats-backend.p.goit.global/api/orders';
+  const backendUrl = 'https://tasty-treats-backend.p.goit.global/api/orders/add';
 
   const data = {
     name: name,
