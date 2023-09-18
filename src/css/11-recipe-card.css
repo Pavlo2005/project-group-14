@@ -1,0 +1,80 @@
+.recipe-card-container {
+  width: 258px;
+  height: 287px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  position: relative;
+}
+
+.recipe-card-title {
+  font-family: 'Inter-600';
+  font-size: 14px;
+  line-height: 1.28em;
+  text-align: left;
+  padding-top: 166px;
+  padding-left: 16px;
+  width: auto;
+  margin-bottom: 8px;
+  margin-right: auto;
+}
+
+.recipe-card-text {
+  font-family: 'Inter-400';
+  font-size: 12px;
+  line-height: 1.33em;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  width: 226px;
+  height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.recipe-btn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-card-rating {
+  margin-left: 16px;
+  margin-right: 4px;
+  margin-top: 6.5px;
+  margin-bottom: 6.5px;
+  font-family: 'Inter-500';
+}
+
+.recipe-icon-rating {
+  margin-top: 6.5px;
+  margin-bottom: 6.5px;
+  fill: #f8f8f8;
+  fill-opacity: 0.1;
+}
+
+.recipe-icon-heart {
+    position: absolute;
+    left: 212px;
+    top: 16px;
+    fill: #f8f8f8;
+}
+
+.recipe-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--color-green);
+  width: 93px;
+  height: 31px;
+  font-size: 12px;
+  line-height: 1.21em;
+  border: none;
+  color: #f8f8f8;
+  margin-left: 17px;
+  
+}

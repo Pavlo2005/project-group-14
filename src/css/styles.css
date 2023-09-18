@@ -14,6 +14,7 @@
 @import url('./07-menu.css');
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
+@import url('./11-recipe-card.css');
 
 :root {
   --color-green: #9BB537;
