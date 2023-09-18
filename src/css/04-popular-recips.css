@@ -1,190 +1,128 @@
 .precipes-title {
   /* Basic styles */
-  padding-bottom: 20px;
-}
-
-@media screen and (min-width: 768px) {
-  .precipes-title {
-    padding-bottom: 32px;
-  }
+  max-width: 335px;
 }
 
 .precipes-title-text {
   /* Basic styles */
-  padding-left: 20px;
+  padding-bottom: 20px;
 
-  color: #050505;
-  font-family: Inter;
+  color: var(--color-black2);
+  font-family: 'Inter-600';
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 1, 33;
 }
 
-@media screen and (min-width: 1280px) {
-  .precipes-title-text {
-    font-size: 24px;
-    line-height: 28px;
-  }
-}
-
-.precipec-area {
+.precipes-list {
   /* Basic styles */
   display: flex;
   flex-direction: column;
   gap: 24px;
-
-  overflow-y: hidden;
-  text-overflow: ellipsis;
-
-  max-width: 375px;
-  height: 158px;
-
-  padding-left: 20px;
-  padding-right: 20px;
-  /* margin: 0; */
-}
-
-@media screen and (min-width: 768px) {
-  .precipec-area {
-    gap: 16px;
-
-    width: 176px;
-    height: 316px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .precipec-area {
-    gap: 32px;
-
-    width: 235px;
-    height: 364px;
-  }
+  height: 160px;
+  overflow: hidden;
 }
 
 .precipes-marcup {
   /* Basic styles */
   display: flex;
-  gap: 16px;
-
+  gap: 8px;
+  height: 68px;
   width: auto;
-  height: 64px;
-  /* padding-left: 20px;
-  padding-right: 20px; */
-}
-
-@media screen and (min-width: 768px) {
-  .precipes-marcup {
-    gap: 8px;
-
-    height: 68px;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .precipes-marcup {
-    gap: 16px;
-
-    height: 68px;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-  }
 }
 
 .precipes-marcup-img {
   /* Basic styles */
   width: 64px;
   height: 64px;
-
   border-radius: 8px;
 }
 
-@media screen and (min-width: 768px) {
+.precipes-marcup-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.precipes-marcup-title-text {
+  /* Basic styles */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: var(--color-black2);
+  font-family: 'Inter-600';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1, 286;
+
+  padding-bottom: 8px;
+}
+
+.precipes-marcup-text {
+  /* Basic styles */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  color: var(--color-text);
+  font-family: 'Inter-400';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1, 33;
+}
+
+@media only screen and (min-width: 768px) {
+  .precipes-title {
+    width: 176px;
+  }
+
+  .precipes-title-text {
+    padding-bottom: 32px;
+  }
+
+  .precipes-list {
+    gap: 16px;
+    height: auto;
+  }
+
   .precipes-marcup-img {
     width: 48px;
     height: 48px;
   }
+
+  .precipes-marcup-text {
+    -webkit-line-clamp: 3;
+
+    font-size: 10px;
+    font-style: normal;
+    line-height: 1, 4;
+  }
 }
 
-@media screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
+  .precipes-title {
+    width: 235px;
+  }
+
+  .precipes-title-text {
+    font-size: 24px;
+    line-height: 1, 167;
+  }
+
+  .precipes-list {
+    gap: 32px;
+  }
+
+  .precipes-marcup {
+    gap: 16px;
+  }
+
   .precipes-marcup-img {
     width: 64px;
     height: 64px;
   }
 }
-
-.precipes-marcup-title {
-  overflow-x: hidden;
-}
-
-.precipes-marcup-title-text {
-  color: #050505;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 18px;
-
-  padding-bottom: 8px;
-
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.precipes-marcup-text-block {
-  /* Basic styles */
-  overflow-y: hidden;
-  text-overflow: ellipsis;
-  /* whitespace: nowrap; */
-  height: 35px;
-}
-
-@media screen and (min-width: 768px) {
-  .precipes-marcup-text-block {
-    height: 41px;
-  }
-}
-
-.precipes-marcup-text {
-  /* Basic styles */
-  color: rgba(5, 5, 5, 0.8);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  font-family: Inter;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px; /* 133.333% */
-}
-
-@media screen and (min-width: 768px) {
-  .precipes-marcup-text {
-    -webkit-line-clamp: 3;
-
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
-    /* whitespace: nowrap; */
-    font-size: 10px;
-    line-height: 14px; /* 140% */
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .precipes-marcup-text {
-  }
-}
-
-/* @media screen and (min-width: 768px) {
-}
-
-@media screen and (min-width: 1280px) {
-} */
