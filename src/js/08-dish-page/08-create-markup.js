@@ -45,11 +45,11 @@ function createMurkupDP(recipe) {
   }
 
   const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
-  const favoriteBtn = favoritesLS.find(({ _id }) => _id === recipe._id)
+  const favoriteBtn = favoritesLS.find(id => id === _id)
     ? 'Remove from favorite'
     : 'Add to favorite';
 
-  return `<div class="overlay is-hidden js-overlay-dp" data-id="${_id}">
+  return `<div class="overlay js-overlay-dp" data-id="${_id}">
   <div class="recipe-modal js-recipe-modal">
     <button class="recipe-modal-close-btn js-close-buttton-dp" type="button">
       <svg class="recipe-modal-close-icon">
@@ -77,7 +77,7 @@ function createMurkupDP(recipe) {
     <button class="recipe-modal-button favorite js-favorite-button-dp">${favoriteBtn}</button>
     </li>
     <li class="recipe-modal-batton-item">
-    <button class="recipe-modal-button rating js-open-rating-button">Give a rating</button>
+    <button class="recipe-modal-button rating js-open-rating-button" data-id="${_id}">Give a rating</button>
     </li>
     </ul>    
   </div>

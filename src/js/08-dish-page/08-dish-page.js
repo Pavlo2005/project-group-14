@@ -5,23 +5,25 @@ import { changeFavorites } from './08-handler-favorites-LS';
 const favoritList = document.querySelector('.js-dish-page-favorite');
 const dishList = document.querySelector('.js-dish-page-button');
 
-favoritList.addEventListener('click', evt => {
-  if (evt.target === evt.currentTarget) {
-    return;
-  }
-  onClick(evt);
-});
+if (favoritList) {
+  favoritList.addEventListener('click', evt => {
+    if (evt.target === evt.currentTarget) {
+      return;
+    }
+    openDishPage(evt);
+  });
+}
 
 if (dishList) {
   dishList.addEventListener('click', evt => {
     if (!evt.target.classList.contains('js-open-dish-button')) {
       return;
     }
-    onClick(evt);
+    openDishPage(evt);
   });
 }
 
-function onClick(evt) {
+function openDishPage(evt) {
   const currentDish = evt.target.closest('.js-open-dish');
 
   serviceDish(currentDish.dataset.id)
@@ -30,16 +32,23 @@ function onClick(evt) {
 
       const overlay = document.querySelector('.js-overlay-dp');
       const closeBtn = document.querySelector('.js-close-buttton-dp');
-      const addFavoriteBtn = document.querySelector('.js-favorite-button-dp');
+      const changeFavoriteBtn = document.querySelector(
+        '.js-favorite-button-dp'
+      );
 
-      overlay.classList.remove('is-hidden');
+      changeFavoriteBtn.addEventListener('click', handlerFavorite);
 
-      addFavoriteBtn.addEventListener('click', evt => {
-        evt.target.textContent = changeBtnText(recipeDish._id);
-        changeFavorites(recipeDish);
-      });
+      function handlerFavorite(evt) {
+        const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
+        evt.target.textContent = favoritesLS.find(id => id === recipeDish._id)
+          ? 'Add to favorite'
+          : 'Remove from favorite';
+
+        changeFavorites(recipeDish._id);
+      }
 
       closeBtn.addEventListener('click', () => overlay.remove());
+
       overlay.addEventListener('click', evt => {
         const modalWindow = evt.target.closest('.js-recipe-modal');
         if (!modalWindow) {
@@ -56,9 +65,3 @@ function onClick(evt) {
     .catch(err => console.log(err));
 }
 
-function changeBtnText(id) {
-  const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
-  return favoritesLS.find(({ _id }) => _id === id)
-    ? 'Add to favorite'
-    : 'Remove from favorite';
-}

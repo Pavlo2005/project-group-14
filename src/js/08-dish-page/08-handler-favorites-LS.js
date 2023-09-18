@@ -1,7 +1,6 @@
-function changeFavorites(dish) {
+function changeFavorites(dishId) {
   const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
-  const idx = favoritesLS.findIndex(({ _id }) => _id === dish._id);
-
+  const idx = favoritesLS.indexOf(dishId);
   if (!!~idx) {
     favoritesLS.splice(idx, 1);
     
@@ -11,8 +10,8 @@ function changeFavorites(dish) {
     
     return;
     }
-  const { _id, thumb = '', title = '', description = '', rating = 0 } = dish;
-    favoritesLS.push({_id, thumb, title, description, rating });
+  
+    favoritesLS.push(dishId);
      
   localStorage.setItem("favorites", JSON.stringify(favoritesLS));
 }
