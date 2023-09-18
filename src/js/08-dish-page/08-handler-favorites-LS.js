@@ -5,7 +5,7 @@ function changeFavorites(dishId) {
     favoritesLS.splice(idx, 1);
     
     !favoritesLS.length
-      ? localStorage.clear()
+      ? localStorage.removeItem("favorites")
       : localStorage.setItem("favorites", JSON.stringify(favoritesLS));
     
     return;
