@@ -15,6 +15,7 @@
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
 @import url('./10-loader.css');
+@import url('./modal-order-now.css');
 
 :root {
   --color-green: #9BB537;

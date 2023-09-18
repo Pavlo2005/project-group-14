@@ -1,0 +1,30 @@
+<!-- Modal Order now-->
+
+<div class="modal-order" data-modal="2" id="ModalOrderNow">
+
+    <div class="modal-order-text">
+        <button class="modal-order-close-btn" type="button">
+        <svg class="modal-order-close-icon" width="14" height="14">
+            <use href="/img/icon.svg#icon-x"></use>
+        </svg>
+    </button>
+
+        <h2 class="modal-order-title">ORDER NOV</h2>
+        <form class="modal-order-form">
+            <label class="modal-order-label" for="name">Name</label>
+            <input class="modal-order-input" type="name" id="name" pattern=".*" title = "Please enter your name" />
+            <label class="modal-order-label" for="phone">Phone number</label>
+            <input class="modal-order-input" type="phone" id="phone" pattern="[0-9]{10}" title = "Please enter your Phone number" />
+            <label class="modal-order-label" for="email">Email</label>
+            <input class="modal-order-input" type="email" id="email" name="email" pattern=".*" title = "Please enter your Email" />
+            <label class="modal-order-label" for="comment">Comment</label>
+            <textarea class="modal-order-input" name="modal_comment" id="modal_comment" rows="5"></textarea>
+
+            <button class="modal-order-btn" type="submit">Send</button>
+        
+        </form>
+    </div>
+
+</div>
+
+<script type="module" src="js/modal-order-now.js"></script>
