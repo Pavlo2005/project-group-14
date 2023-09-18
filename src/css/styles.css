@@ -14,16 +14,22 @@
 @import url('./07-menu.css');
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
+@import url('./10-loader.css');
 @import url('./11-recipe-card.css');
+
 
 :root {
   --color-green: #9BB537;
   --color-yellow: #EEA10C;
   --color-black: #1E1E1E;
+  --color-black2: #050505;
   --color-white: #ffffff;
   --color-text: rgba(5, 5, 5, 0.80);
+  --color-solihth-text: rgba(5, 5, 5, 0.50);
+  --color-light-text: rgba(5, 5, 5, 0.3);
+  --color-light-border: rgba(5, 5, 5, 0.2);
   --color-border-grey: rgba(255, 255, 255, 0.20);
-  --transition-duration: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @font-face {
@@ -49,6 +55,17 @@
 }
 
 @font-face {
+  font-family: 'Inter-500';
+  src: url('../fonts/Inter-Medium.eot');
+  src: url('../fonts/Inter-Medium.woff2') format('woff2'),
+    url('../fonts/Inter-Medium.woff') format('woff'),
+    url('../fonts/Inter-Medium.ttf') format('truetype'),
+    url('../fonts/Inter-Medium.svg') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Inter-600';
   src: url('../fonts/Inter-SemiBold.eot');
   src: url('../fonts/Inter-SemiBold.woff2') format('woff2'),
@@ -59,6 +76,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Inter-700';
+  src: url('../fonts/Inter-Bold.eot');
+  src: url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff'),
+    url('../fonts/Inter-Bold.ttf') format('truetype'),
+    url('../fonts/Inter-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 html,
 body {
@@ -66,12 +94,14 @@ body {
 }
 
 body {
-  color: var(--color-white);
+  color: var(--color-text);
+  font-family: 'Inter-400';
 }
 
 .container {
-  margin: 0 auto;
   padding: 0 20px;
+  min-width: 320px;
+  flex-direction: column;
 }
 
 .section-title {
@@ -86,26 +116,23 @@ body {
   line-height: 1.33;
 }
 
-@media screen and (min-width: 415px) {
-  .container {
-    width: 375px;
-  }
-}
-
-@media screen and (max-width: 414px) {
+@media only screen and (min-width: 375px) {
   .container {
     max-width: 375px;
+    margin: 0 auto;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    max-width: 768px;
+    padding: 0 32px;
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
   .container {
-    width: 1280px;
+    max-width: 1280px;
+    padding: 0 100px;
   }
 }
