@@ -26,19 +26,6 @@
   border-radius: 15px;
 }
 
-@media only screen and (min-width: 335px) {
-  .recipe-modal {
-    width: 335px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .recipe-modal {
-    width: 531px;
-    padding: 32px;
-  }
-}
-
 .recipe-modal-close-btn {
   display: flex;
   justify-content: center;
@@ -51,24 +38,10 @@
   background-color: transparent;
 }
 
-@media only screen and (min-width: 768px) {
-  .recipe-modal-close-btn {
-    top: 16px;
-    right: 16px;
-  }
-}
-
 .recipe-modal-close-icon {
   width: 20px;
   height: 20px;
   stroke: var(--color-black2);
-}
-
-@media only screen and (min-width: 768px) {
-  .recipe-modal-close-icon {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 .recipe-modal-iframe {
@@ -76,22 +49,9 @@
   margin-bottom: 20px;
 }
 
-@media only screen and (min-width: 768px) {
-  .recipe-modal-iframe {
-    height: 250px;
-    margin-bottom: 16px;
-  }
-}
-
 .recipe-modal-img {
   width: 100%;
   margin-bottom: 20px;
-}
-
-@media only screen and (min-width: 768px) {
-  .recipe-modal-img {
-    margin-bottom: 16px;
-  }
 }
 
 .recipe-modal-title {
@@ -107,17 +67,6 @@
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
-  .recipe-modal-title.mobile {
-    display: none;
-  }
-
-  .recipe-modal-title.desktop {
-    display: block;
-    margin-bottom: 16px;
-  }
-}
-
 .recipe-modal-rating {
   display: flex;
   align-items: center;
@@ -131,12 +80,6 @@
   font-family: 'Inter-500';
   font-size: 14px;
   line-height: 1.28;
-}
-
-@media only screen and (min-width: 768px) {
-  .recipe-modal-rating-number {
-    margin-left: auto;
-  }
 }
 
 .recipe-modal-rating-list {
@@ -163,12 +106,6 @@
 .recipe-modal-table {
   width: 100%;
   margin-bottom: 40px;
-}
-
-@media only screen and (min-width: 768px) {
-  .recipe-modal-table {
-    margin-bottom: 32px;
-  }
 }
 
 .table-row {
@@ -219,16 +156,6 @@
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 768px) {
-  .recipe-modal-tag-list.desktop {
-    display: flex;
-  }
-
-  .recipe-modal-tag-list.mobile {
-    display: none;
-  }
-}
-
 .recipe-modal-tag-item {
   padding: 8px 16px;
   color: var(--color-black2);
@@ -248,15 +175,11 @@
   line-height: 1.28;
 }
 
-@media only screen and (min-width: 768px) {
-  .recipe-modal-desc {
-    margin-bottom: 32px;
-  }
-}
-.recipe-modal-batton-list{
+.recipe-modal-batton-list {
   display: flex;
   flex-wrap: nowrap;
 }
+
 .recipe-modal-button {
   border-radius: 15px;
   padding: 12px 24px;
@@ -292,7 +215,70 @@
   color: #f8f8f8;
 }
 
+@media only screen and (min-width: 335px) {
+  .recipe-modal {
+    width: 335px;
+  }
+}
+
 @media only screen and (min-width: 768px) {
+  .recipe-modal {
+    width: 531px;
+    padding: 32px;
+  }
+
+  .recipe-modal-close-btn {
+    top: 16px;
+    right: 16px;
+  }
+
+  .recipe-modal-close-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .recipe-modal-iframe {
+    height: 250px;
+    margin-bottom: 16px;
+  }
+
+  .recipe-modal-img {
+    margin-bottom: 16px;
+  }
+
+  .recipe-modal-title.mobile {
+    display: none;
+  }
+
+  .recipe-modal-title.desktop {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .recipe-modal-rating-number {
+    margin-left: auto;
+  }
+
+  .recipe-modal-rating-number {
+    margin-left: auto;
+  }
+
+  .recipe-modal-table {
+    margin-bottom: 32px;
+  }
+
+  .recipe-modal-tag-list.desktop {
+    display: flex;
+  }
+
+  .recipe-modal-tag-list.mobile {
+    display: none;
+  }
+
+  .recipe-modal-desc {
+    margin-bottom: 32px;
+  }
+
   .recipe-modal-button.favorite {
     margin-right: 16px;
   }
