@@ -3,6 +3,7 @@ function createMurkupDP(recipe) {
     _id,
     title = '',
     thumb = '',
+    youtube = '',
     time = 'XX',
     tags = [],
     ingredients = [],
@@ -31,7 +32,7 @@ function createMurkupDP(recipe) {
       ratingList.push(`
       <li class="recipe-modal-rating-item">
           <svg class="recipe-modal-rating-icon active-icon-dp" width="18" height="18">
-            <use href="./img/icon.svg#icon-star"></use>
+            <use href="/img/icon.svg#icon-star"></use>
           </svg>
         </li>`);
       continue;
@@ -39,7 +40,7 @@ function createMurkupDP(recipe) {
     ratingList.push(`
         <li class="recipe-modal-rating-item">
           <svg class="recipe-modal-rating-icon" width="18" height="18">
-            <use href="./img/icon.svg#icon-star"></use>
+            <use href="/img/icon.svg#icon-star"></use>
           </svg>
         </li>`);
   }
@@ -49,15 +50,31 @@ function createMurkupDP(recipe) {
     ? 'Remove from favorite'
     : 'Add to favorite';
 
-  return `<div class="overlay js-overlay-dp" data-id="${_id}">
+  let media;
+
+  if (youtube) {
+    const youtubeUrl = `${youtube}`;
+    const videoId = youtubeUrl.split('v=')[1];
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    media = `<iframe class="recipe-modal-iframe"
+  width="100%"
+  src="${embedUrl}"
+  frameborder="0"
+  allowfullscreen
+></iframe>`;
+  } else {
+    media = `<img src="${thumb}" alt="${title}" class="recipe-modal-img" />`;
+  }
+
+  return `<div class="overlay-dp js-overlay-dp" data-id="${_id}">
   <div class="recipe-modal js-recipe-modal">
     <button class="recipe-modal-close-btn js-close-buttton-dp" type="button">
       <svg class="recipe-modal-close-icon">
-        <use href="./img/icon.svg#icon-x"></use>
+        <use href="/img/icon.svg#icon-x"></use>
       </svg>
     </button>
     <h2 class="recipe-modal-title desktop">${title}</h2>
-    <img src="${thumb}" alt="egg" class="recipe-modal-img" />
+${media}
     <h2 class="recipe-modal-title mobile">${title}</h2>
     <div class="recipe-modal-rating">
       <ul class="recipe-modal-tag-list desktop">${tagsList}</ul>
