@@ -108,18 +108,18 @@ TODO: 2 types of grey for dark and light
   flex-direction: column;
   gap: 24px;
 }
-@media only screen and (min-width: 1200px) {
-  .fav-recipes {
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 16px 32px;
-  }
-}
 @media only screen and (min-width: 768px) {
   .fav-recipes {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 16px 16px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .fav-recipes {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 32px 16px;
   }
 }
 
