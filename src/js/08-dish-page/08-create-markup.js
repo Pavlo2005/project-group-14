@@ -66,7 +66,7 @@ function createMurkupDP(recipe) {
     media = `<img src="${thumb}" alt="${title}" class="recipe-modal-img" />`;
   }
 
-  return `<div class="overlay js-overlay-dp" data-id="${_id}">
+  return `<div class="overlay-dp js-overlay-dp" data-id="${_id}">
   <div class="recipe-modal js-recipe-modal">
     <button class="recipe-modal-close-btn js-close-buttton-dp" type="button">
       <svg class="recipe-modal-close-icon">

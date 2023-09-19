@@ -1,4 +1,4 @@
-.overlay {
+.overlay-dp {
   position: fixed;
   z-index: 100;
   top: 0;
@@ -73,11 +73,13 @@
 
 .recipe-modal-iframe {
   height: 295px;
+  margin-bottom: 20px;
 }
 
 @media only screen and (min-width: 768px) {
   .recipe-modal-iframe {
     height: 250px;
+    margin-bottom: 16px;
   }
 }
 
