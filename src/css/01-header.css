@@ -1,22 +1,25 @@
 .header {
   padding: 20px 20px;
-  background-color: var(--color-white);
+  background-color: var(--color-gray);
+  position: relative;
 }
 
 .logo{
   color: var(--color-black2);
-  margin-right: 182px;
+  margin-right: 160px;
+  font-size: 18px;
+  font-family: 'Inter-600';
 }
 
 @media screen and (min-width: 768px) {
   .logo {
-    margin-right: 217px;
+    margin-right: 207px;
   } 
 }
 
 @media screen and (min-width: 1280px) {
   .logo {
-    margin-right: 399px;
+    margin-right: 389px;
   }
 }
 
@@ -26,10 +29,12 @@
 
 .home-link{
   color: var(--color-green);
+  font-weight: 400;
 }
 
 .fav-link{
   color: var(--color-black2);
+  font-weight: 500;
 }
 
 .nav-list{
@@ -52,13 +57,13 @@
 
 @media screen and (min-width: 768px) {
   .nav-container {
-    padding-right: 203px;
+    padding-right: 193px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .nav-container {
-    padding-right: 391px;
+    padding-right: 371px;
   }
 }
 
@@ -67,12 +72,14 @@
   align-items: center;
   margin-top: 20px;
   margin-bottom: 85px;
+  padding-right: 20px;
 }
 
 .header-img{
   display: flex;
   align-items: center;
   gap: 14px;
+  padding-right: 20px;
 }
 
 
@@ -87,7 +94,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .switcher-icon {
+  .switcher-img {
     display: none;
   }
 }
@@ -131,7 +138,10 @@
   background-color: var(--color-green);
   height: 100vh;
   width: 200px;
-  
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -142,10 +152,9 @@
 
 @media screen and (min-width: 1280px) {
   .burger-menu {
-      display: none;
-    }
+    display: none;
+  }
 }
-
 
 .close-burger-menu{
   stroke: var(--color-white);
@@ -165,7 +174,7 @@
   font-family: Inter 500;
 }
 
-.switcher-burger-menu{
+.switcher{
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -179,4 +188,52 @@
 .burger-fav-link{
   color: var(--color-white);
   font-family: 'Inter-500';
+}
+
+/* switcher */
+.switcher-bc{
+  width: 46px;
+  height: 20px;
+  background-color: var(--color-gray);
+  border-radius: 50px;
+  display: inline-block;
+  position: relative;
+}
+
+.switch-input{
+  height: 0;
+  width: 0;
+  opacity: 0;
+
+}
+
+.switch-slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #CECDCD;
+  border-radius: 34px;
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  left: 2px;
+  bottom: 2px;
+  height: 16px;
+  width: 20px;
+  background-color: var(--color-gray);
+  border-radius: 34px;
+}
+
+.switch-input:checked + .switch-slider{
+  background-color: var(--color-green);
+}
+
+.switch-input:checked + .switch-slider::before{
+  transform: translatex(26px);
 }
