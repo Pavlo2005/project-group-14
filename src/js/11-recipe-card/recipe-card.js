@@ -9,7 +9,7 @@ export function createMarkupRecipe(data) {
             <h2 class="recipe-card-title">${title}</h2>
             <p class="recipe-card-text">${description}</p>
             <div class="recipe-btn-container">
-                <p class="recipe-card-rating">${rating}</p>
+                <p class="recipe-card-rating">${Math.round(rating * 10) / 10}</p>
                 <ul class="recipe-card-item">${ratingList.join('')}</ul>
                 <button class="recipe-btn js-open-dish-button">See recipe</button>
             </div>
