@@ -3,7 +3,7 @@ TODO: adding and removing from favorites on heart click
 TODO: spread the categories to the screen edge
 */
 
-import { createMarkupRecipe } from "../11-recipe-card/11-recipe-card"
+import { createMarkupRecipe } from "../11-recipe-card/recipe-card"
 import { getRecipesByID } from "./09-favorites-api"
 
 // const favoriteRecipes = ["6462a8f74c3d0ddd288980d4", "6462a8f74c3d0ddd28897fc1", "6467fb9d3d8125271a59219e", "6462a8f74c3d0ddd28897fbc", "6462a8f74c3d0ddd28897fb9", "6462a8f74c3d0ddd28897fdf", "6462a8f74c3d0ddd28897fc2"]
