@@ -159,7 +159,7 @@
 
 @media only screen and (min-width: 768px) {
     .container-filter {
-        max-width: 496px !important;
+        max-width: 600px !important;
     }
 
     .filter-container-loader {
@@ -190,7 +190,7 @@
 
 @media only screen and (min-width: 1280px) {
     .container-filter {
-        max-width: 982px !important;
+        max-width: 1024px !important;
     }
 
     .filter-container-loader {
