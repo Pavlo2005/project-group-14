@@ -60,7 +60,7 @@ const modalWindovs = `
              
           </div>              
             <input class="reting-modal-form-input" type="email" name="email"
-                  id="modal-email" placeholder="Enter email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                  id="modal-email" placeholder="Enter email"  />
             
             <button type="submit" class="reting-button-submit reting-item-personal js-reting-submit">Send</button>
         </form>
@@ -69,7 +69,7 @@ const modalWindovs = `
 
 // btnGiveRating.addEventListener('click', handlerClick);
 
-// handlerClick();
+handlerClick();
 
 // ============================функція розмітки модального викна
 function handlerClick() {
@@ -96,21 +96,27 @@ function handlerClick() {
 })();
 
 // ==================функція повертання вибору рейтингу
-const enterReiting = {
-  reting: document.querySelector('.js-reting-form-input'),
-  send: document.querySelector('.js-reting-submit'),
-};
+// const enterReting = {
+//   reting: document.querySelector('.js-reting-form-input'),
+//   send: document.querySelector('.js-reting-submit'),
+// };
 
 // enterReiting.reting.addEventListener();
 
 const selectedReting = document.querySelector("input[name='rating']:checked");
 // console.log(selectedReting.volue);
+// handlerClickReting();
 
-enterReiting.send.addEventListener('submit', handlerClickReiting);
+const enterReting = {
+  reting: document.querySelector('.js-reting-form-input'),
+  send: document.querySelector('.js-reting-submit'),
+};
 
-function handlerClickReiting() {
+enterReting.send.addEventListener('submit', handlerClickReting);
+
+function handlerClickReting() {
   console.log(4234234);
-  enterReiting.send.preventDefault();
+  enterReting.send.preventDefault();
   if ((selectedReting.volue = 0)) {
     console.log('Error data');
     return 'Error data';
@@ -119,3 +125,4 @@ function handlerClickReiting() {
   const inputReting = selectedReting.volue;
   return inputReting;
 }
+//  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
