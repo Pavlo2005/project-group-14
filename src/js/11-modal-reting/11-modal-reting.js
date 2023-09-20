@@ -69,7 +69,7 @@ const modalWindovs = `
 
 // btnGiveRating.addEventListener('click', handlerClick);
 
-handlerClick();
+// handlerClick();
 
 // ============================функція розмітки модального викна
 function handlerClick() {
