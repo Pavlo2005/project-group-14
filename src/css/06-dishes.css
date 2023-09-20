@@ -1,0 +1,26 @@
+.dich-block {
+    padding: 14px 0;
+}
+
+.dich-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .dich-container {
+        gap: 16px 16px;
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .dich-container {
+        gap: 44px 16px;
+    }
+}
