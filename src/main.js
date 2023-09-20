@@ -7,4 +7,4 @@ import './js/06-dishes/06-dishes.js';
 import './js/07-menu/07-menu.js';
 import './js/08-dish-page/08-dish-page.js';
 import './js/09-favorites/09-favorites.js';
-import './js/modal-order-now.js';
+import './js/12-modal-order-now.js';
