@@ -1,38 +1,28 @@
-const burgerMenu = document.querySelector('.js-header-menu')
-const closeBurgerMenu = document.querySelector('.js-close-menu')
 
-burgerMenu.addEventListener('click', handlerClick);
+// const burgerMenubtn = document.querySelector('.js-header-menu')
+// const closeBurgerMenuBtn = document.querySelector('.js-close-menu')
+// let burgerMenu = document.querySelector('.js-burger-menu')
 
-function handlerClick(evn) {
-  const currentDish = evn.target.closest('.js-open-dish').dataset.id;
-  console.log(currentDish);
-  return currentDish;
-}
+// burgerMenuBtn.addEventListener('click', handlerClick);
 
+// burgerMenubtn.addEventListener('click', handlerClick)
 
-function burgerMenu(selector) {
-  let menu = $(selector);
-  let button = menu.find('.burger-menu_button', '.burger-menu_lines');
-  let links = menu.find('.burger-menu_link');
-  let overlay = menu.find('.burger-menu_overlay');
+// function handlerClick(){
+//   burgerMenu.classList.toggle('burger-menu');
   
-  button.on('click', (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-  
-  links.on('click', () => toggleMenu());
-  overlay.on('click', () => toggleMenu());
-  
-  function toggleMenu(){
-    menu.toggleClass('burger-menu_active');
+//   burgerMenu.toggleClass('active');
     
-    if (menu.hasClass('burger-menu_active')) {
-      $('body').css('overlow', 'hidden');
-    } else {
-      $('body').css('overlow', 'visible');
-    }
-  }
-}
+    
+//   }
+  const elements = {
+    openBurgerBtn: document.querySelector('#data-burger-menu-opener'),
+    closeBurgerBtn: document.querySelector('#data-mobile-menu-closed'),
+    menu: document.querySelector('#data-burger-menu'),
+  };
 
-burgerMenu('.burger-menu');
+  elements.openBurgerBtn.addEventListener("click", toggleMenu);
+  elements.closeBurgerBtn.addEventListener("click", toggleMenu);
+
+  function toggleMenu() {
+    elements.menu.classList.toggle("is-hidden");
+  }
