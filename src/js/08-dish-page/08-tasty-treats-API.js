@@ -13,3 +13,16 @@ async function serviceDish(dishId) {
 }
 
 export { serviceDish };
+
+// function serviceDish(dishId) {
+//   const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
+//   const END_POINT = '/recipes/';
+
+//   return fetch(`${BASE_URL}${END_POINT}${dishId}`).then(resp => {
+//     if (!resp.ok) {
+//       throw new Error(resp.statusText);
+//     }
+
+//     return resp.json();
+//   });
+// }
