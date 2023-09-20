@@ -9,30 +9,38 @@ const modalWindovs = `
                 <use href="/img/icon.svg#icon-x"></use>
             </svg>
         </button>
+        <h2 class="reting-modal-title">Rating</h2>
         <form class="reting-form-input" name="modal-form">
-            <ul class="reting-list-personal">
-                <label class="" for="username">Name</label>
+        <div>
+          <p>0.0</p>
+           <ul class="reting-list-personal">                
                 <li class="reting-item-personal">
-                    <input class="reting-modal-form-input" type="text" name="username"
-                        id="modal-name" placeholder="Name" pattern="\D{1,}" />
+                  <svg class="buy-modal-form-icon buy-icon-mastercard">
+                    <use href="/img/icons.svg#icon-mastercard"></use>
+                  </svg>                    
                 </li>
-                <li>
-                    <label class="reting-modal-label" for="modal-phone">Phone number</label>
-                    <input class="reting-modal-form-input reting-phon" type="tel"
-                        pattern="[0-9\s]{13,19}" maxlength="19" name="userphon" id="modal-phone"
-                        placeholder="Phone number" />
+                <li class="reting-item-personal">
+              
                 </li>
-                <li>
-                    <label class="reting-modal-label" for="modal-email">Email</label>
-                    <input class="reting-modal-form-input" type="email" name="email"
-                        id="modal-email" placeholder="Enter your email"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                <li class="reting-item-personal">
+            
+                </li>
+                <li class="reting-item-personal">
+               
+                </li>
+                <li class="reting-item-personal">
+               
                 </li>
             </ul>
-            <label class="reting-modal-label" for="modal-comment">Comment</label>
-            <textarea class="reting-modal-form-comment" name="comment" id="modal-comment" rows="6"
-                placeholder="Enter text"></textarea>
-            <button type="submit" class="reting-button-submit">Send</button>
+        </div>
+        
+      
+           
+              <label class="reting-modal-label" for="modal-comment">Comment</label>
+            <textarea class="reting-modal-form-comment" name="comment" id="modal-comment" rows="6">
+            </textarea>
+           
+            <button type="submit" class="reting-button-submit reting-item-personal">Send</button>
         </form>
     </div>
 </div>`;
@@ -53,13 +61,14 @@ function handlerClick() {
   const refs = {
     // openModalBtn: document.querySelector('dataset.'),
     closeModalBtn: document.querySelector('[data-modal-buy-close]'),
-    modal: document.querySelector('[data-modal-buy]'),
+    modal: document.querySelector('[data-modal-reting]'),
   };
 
-  refs.btnGiveRating.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
+  // refs.btnGiveRating.addEventListener('click', toggleModal);
+  // refs.closeModalBtn.addEventListener('click', toggleModal);
+  toggleModal();
 
   function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.toggle('reting-modal-is-hidden');
   }
 })();

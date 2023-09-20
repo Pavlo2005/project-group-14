@@ -15,18 +15,19 @@
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
 @import url('./10-loader.css');
+@import url('./11-modal-reting.css');
 
 :root {
-  --color-green: #9BB537;
-  --color-yellow: #EEA10C;
-  --color-black: #1E1E1E;
+  --color-green: #9bb537;
+  --color-yellow: #eea10c;
+  --color-black: #1e1e1e;
   --color-black2: #050505;
   --color-white: #ffffff;
-  --color-text: rgba(5, 5, 5, 0.80);
-  --color-solihth-text: rgba(5, 5, 5, 0.50);
+  --color-text: rgba(5, 5, 5, 0.8);
+  --color-solihth-text: rgba(5, 5, 5, 0.5);
   --color-light-text: rgba(5, 5, 5, 0.3);
   --color-light-border: rgba(5, 5, 5, 0.2);
-  --color-border-grey: rgba(255, 255, 255, 0.20);
+  --color-border-grey: rgba(255, 255, 255, 0.2);
   --transition-duration: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -85,10 +86,9 @@
   font-style: normal;
 }
 
-
 html,
 body {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 body {
