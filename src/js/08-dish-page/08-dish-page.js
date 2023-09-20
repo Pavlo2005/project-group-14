@@ -47,21 +47,36 @@ function openDishPage(evt) {
         changeFavorites(recipeDish._id);
       }
 
-      closeBtn.addEventListener('click', () => overlay.remove());
+      closeBtn.addEventListener('click', handlerCloseBtn);
 
-      overlay.addEventListener('click', evt => {
+      function handlerCloseBtn() {
+        closeModal();
+      }
+
+      overlay.addEventListener('click', handlerOverlayClick);
+
+      function handlerOverlayClick(evt) {
         const modalWindow = evt.target.closest('.js-recipe-modal');
         if (!modalWindow) {
-          overlay.remove();
+          closeModal();
         }
-      });
+      }
 
-      document.addEventListener('keydown', ({ code }) => {
+      document.addEventListener('keydown', handlerEsc);
+
+      function handlerEsc({ code }) {
         if (code === 'Escape') {
-          overlay.remove();
+          closeModal();
         }
-      });
+      }
+
+      function closeModal() {
+        changeFavoriteBtn.removeEventListener('click', handlerFavorite);
+        closeBtn.removeEventListener('click', handlerCloseBtn);
+        overlay.removeEventListener('click', handlerOverlayClick);
+        document.removeEventListener('keydown', handlerEsc);
+        overlay.remove();
+      }
     })
     .catch(err => console.log(err));
 }
-
