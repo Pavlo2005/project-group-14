@@ -36,7 +36,6 @@ async function addDich({ time, ingredient, value, area }) {
             currentPageDich += 1;
         } else {
             observer.unobserve(guard);
-            window.alert("you have reached the last page");
         }
 
         element.insertAdjacentHTML('beforeend', createMarkupRecipe(data.results));
