@@ -70,7 +70,7 @@ function createMurkupDP(recipe) {
   <div class="recipe-modal js-recipe-modal">
     <button class="recipe-modal-close-btn js-close-buttton-dp" type="button">
       <svg class="recipe-modal-close-icon">
-        <use href="/img/icon.svg#icon-x"></use>
+        <use href="/img/icon.svg#icon-cross"></use>
       </svg>
     </button>
     <h2 class="recipe-modal-title desktop">${title}</h2>
