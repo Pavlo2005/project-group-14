@@ -3,7 +3,9 @@ import SlimSelect from 'slim-select';
 import '../../../node_modules/slim-select/dist/slimselect.css';
 
 import { servicesList } from "./services-list";
-import { createList } from "./create-list";
+import { createListArea } from "./create-list";
+import { createListIngredients } from "./create-list";
+import { refreshDich } from '../06-dishes/06-dishes';
 
 const elements = {
     loader: document.querySelector('.filter-loader'),
@@ -15,6 +17,13 @@ const elements = {
     clearButton: document.getElementById('clearButton')
 }
 
+export let dataElements = {
+    time: '',
+    ingredient: '',
+    value: '',
+    area: ''
+}
+
 // Оголошення SlimSelect зміних
 
 let timeSelect = new SlimSelect({
@@ -22,6 +31,7 @@ let timeSelect = new SlimSelect({
     settings: {
         showSearch: false,
         placeholderText: "time",
+        disabled: false,
     },
     events: {
         afterChange: () => {
@@ -41,7 +51,7 @@ async function addAreas() {
     try {
         const data = await servicesList('areas');
 
-        elements.area.insertAdjacentHTML('beforeend', await createList(data));
+        elements.area.insertAdjacentHTML('beforeend', await createListArea(data));
 
         areaSelect = new SlimSelect({
             select: area,
@@ -66,7 +76,7 @@ async function addIngredients() {
     try {
         const data = await servicesList('ingredients');
 
-        elements.ingredients.insertAdjacentHTML('beforeend', await createList(data));
+        elements.ingredients.insertAdjacentHTML('beforeend', await createListIngredients(data));
 
         ingredientsSelect = new SlimSelect({
             select: ingredients,
@@ -88,6 +98,7 @@ async function addIngredients() {
 
     elements.searchForm.hidden = false;
     elements.loader.classList.replace('filter-loader', 'filter-loader-hidden');
+    refreshDich();
 }
 
 elements.searchForm.addEventListener('change', handlerChange);
@@ -95,12 +106,12 @@ elements.searchForm.addEventListener('change', handlerChange);
 // функція відслідковування змін в полях воду
 
 function handlerChange() {
-    const inputValue = elements.input.value;
-    const timeValue = elements.time.value;
-    const areaValue = elements.area.value;
-    const ingredientsValue = elements.ingredients.value;
+    dataElements.value = elements.input.value;
+    dataElements.time = elements.time.value;
+    dataElements.area = elements.area.value;
+    dataElements.ingredient = elements.ingredients.value;
 
-    console.log(`Пошук: ${inputValue}, Час: ${timeValue}, Регіон: ${areaValue}, Інгредієнти: ${ingredientsValue}`);
+    refreshDich();
 }
 
 elements.clearButton.addEventListener('click', handlerClickClear);
@@ -109,13 +120,21 @@ elements.clearButton.addEventListener('click', handlerClickClear);
 
 function handlerClickClear() {
 
-    elements.area.value = "";
     timeSelect.destroy();
     ingredientsSelect.destroy();
     areaSelect.destroy();
+
+    elements.area.value = "";
     elements.ingredients.value = "";
     elements.input.value = "";
     elements.time.value = "";
+
+    dataElements.value = "";
+    dataElements.time = "";
+    dataElements.area = "";
+    dataElements.ingredient = "";
+
+    refreshDich();
 
     timeSelect = new SlimSelect({
         select: time,
