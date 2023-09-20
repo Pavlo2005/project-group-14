@@ -6,4 +6,4 @@ import './js/05-filter/05-filter.js';
 import './js/06-dishes/06-dishes.js';
 import './js/07-menu/07-menu.js';
 import './js/08-dish-page/08-dish-page.js';
-import './js/09-favorites/09-favorites.js';
+// import './js/09-favorites/09-favorites.js';
