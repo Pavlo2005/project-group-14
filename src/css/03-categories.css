@@ -1,7 +1,4 @@
 @media screen and (min-width: 415px) {
-  .container {
-    width: 375px;
-  }
   .category-list {
     display: flex;
     flex-direction: column;
@@ -62,16 +59,9 @@
 }
 
 @media screen and (max-width: 414px) {
-  .container {
-    max-width: 375px;
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-  }
-
   .btn-allCategories {
     margin-bottom: 42px;
   }
@@ -99,10 +89,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-  }
-
   .sidebar {
     width: 235px;
     height: 416px;
