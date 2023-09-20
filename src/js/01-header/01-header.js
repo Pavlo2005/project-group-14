@@ -1,19 +1,4 @@
 
-// const burgerMenubtn = document.querySelector('.js-header-menu')
-// const closeBurgerMenuBtn = document.querySelector('.js-close-menu')
-// let burgerMenu = document.querySelector('.js-burger-menu')
-
-// burgerMenuBtn.addEventListener('click', handlerClick);
-
-// burgerMenubtn.addEventListener('click', handlerClick)
-
-// function handlerClick(){
-//   burgerMenu.classList.toggle('burger-menu');
-  
-//   burgerMenu.toggleClass('active');
-    
-    
-//   }
   const elements = {
     openBurgerBtn: document.querySelector('#data-burger-menu-opener'),
     closeBurgerBtn: document.querySelector('#data-mobile-menu-closed'),
