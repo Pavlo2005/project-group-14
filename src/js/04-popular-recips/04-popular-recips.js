@@ -31,12 +31,3 @@ async function popRecipesFitchList() {
     popRecipesList.insertAdjacentHTML('beforeend', dataList);
   });
 }
-
-// ========================функція вибору рецепту та повернення id рецепту
-popRecipesList.addEventListener('click', handlerClick);
-
-function handlerClick(evn) {
-  const currentDish = evn.target.closest('.js-open-dish').dataset.id;
-  console.log(currentDish);
-  return currentDish;
-}

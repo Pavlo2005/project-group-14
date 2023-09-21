@@ -4,6 +4,10 @@ import '../../../node_modules/slim-select/dist/slimselect.css';
 
 import { servicesList } from './services-list';
 import { createList } from './create-list';
+import { servicesList } from "./services-list";
+import { createListArea } from "./create-list";
+import { createListIngredients } from "./create-list";
+import { refreshDich } from '../06-dishes/06-dishes';
 
 const elements = {
   loader: document.querySelector('.filter-loader'),
@@ -14,6 +18,21 @@ const elements = {
   ingredients: document.getElementById('ingredients'),
   clearButton: document.getElementById('clearButton'),
 };
+    loader: document.querySelector('.filter-loader'),
+    searchForm: document.getElementById('searchForm'),
+    input: document.getElementById('search'),
+    time: document.getElementById('time'),
+    area: document.getElementById('area'),
+    ingredients: document.getElementById('ingredients'),
+    clearButton: document.getElementById('clearButton')
+}
+
+export let dataElements = {
+    time: '',
+    ingredient: '',
+    value: '',
+    area: ''
+}
 
 // Оголошення SlimSelect зміних
 
@@ -28,6 +47,17 @@ let timeSelect = new SlimSelect({
       handlerChange();
     },
   },
+    select: time,
+    settings: {
+        showSearch: false,
+        placeholderText: "time",
+        disabled: false,
+    },
+    events: {
+        afterChange: () => {
+            handlerChange();
+        }
+    }
 });
 
 let areaSelect;
@@ -42,6 +72,7 @@ async function addAreas() {
     const data = await servicesList('areas');
 
     elements.area.insertAdjacentHTML('beforeend', await createList(data));
+        elements.area.insertAdjacentHTML('beforeend', await createListArea(data));
 
     areaSelect = new SlimSelect({
       select: area,
@@ -70,6 +101,7 @@ async function addIngredients() {
       'beforeend',
       await createList(data)
     );
+        elements.ingredients.insertAdjacentHTML('beforeend', await createListIngredients(data));
 
     ingredientsSelect = new SlimSelect({
       select: ingredients,
@@ -91,6 +123,9 @@ async function addIngredients() {
 
   elements.searchForm.hidden = false;
   elements.loader.classList.replace('filter-loader', 'filter-loader-hidden');
+    elements.searchForm.hidden = false;
+    elements.loader.classList.replace('filter-loader', 'filter-loader-hidden');
+    refreshDich();
 }
 
 elements.searchForm.addEventListener('change', handlerChange);
@@ -102,10 +137,12 @@ function handlerChange() {
   const timeValue = elements.time.value;
   const areaValue = elements.area.value;
   const ingredientsValue = elements.ingredients.value;
+    dataElements.value = elements.input.value;
+    dataElements.time = elements.time.value;
+    dataElements.area = elements.area.value;
+    dataElements.ingredient = elements.ingredients.value;
 
-  console.log(
-    `Пошук: ${inputValue}, Час: ${timeValue}, Регіон: ${areaValue}, Інгредієнти: ${ingredientsValue}`
-  );
+    refreshDich();
 }
 
 elements.clearButton.addEventListener('click', handlerClickClear);
@@ -120,6 +157,22 @@ function handlerClickClear() {
   elements.ingredients.value = '';
   elements.input.value = '';
   elements.time.value = '';
+
+    timeSelect.destroy();
+    ingredientsSelect.destroy();
+    areaSelect.destroy();
+
+    elements.area.value = "";
+    elements.ingredients.value = "";
+    elements.input.value = "";
+    elements.time.value = "";
+
+    dataElements.value = "";
+    dataElements.time = "";
+    dataElements.area = "";
+    dataElements.ingredient = "";
+
+    refreshDich();
 
   timeSelect = new SlimSelect({
     select: time,
