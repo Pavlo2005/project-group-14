@@ -54,12 +54,10 @@
   border: 1px solid #9bb537;
   background-color: transparent;
 }
-
 .swiper-wrapper {
   display: flex;
 }
 
-/* Контейнер слайду */
 .swiper-slide {
   height: 468px;
   width: 870px;
