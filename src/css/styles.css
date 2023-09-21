@@ -5,6 +5,7 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./00-main.css');
 @import url('./01-header.css');
 @import url('./02-introduction.css');
 @import url('./03-categories.css');
@@ -15,6 +16,9 @@
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
 @import url('./10-loader.css');
+@import url('./11-recipe-card.css');
+@import url('./12-scroll-up-button.css');
+
 
 :root {
   --color-green: #9bb537;
@@ -22,8 +26,10 @@
   --color-black: #1e1e1e;
   --color-black2: #050505;
   --color-white: #ffffff;
-  --color-text: rgba(5, 5, 5, 0.8);
-  --color-solihth-text: rgba(5, 5, 5, 0.5);
+
+  --color-gray: #F8F8F8;
+  --color-text: rgba(5, 5, 5, 0.80);
+  --color-solihth-text: rgba(5, 5, 5, 0.50);
   --color-light-text: rgba(5, 5, 5, 0.3);
   --color-light-border: rgba(5, 5, 5, 0.2);
   --color-border-grey: rgba(255, 255, 255, 0.2);
@@ -93,6 +99,7 @@ body {
 body {
   color: var(--color-text);
   font-family: 'Inter-400';
+  background-color: var(--color-gray);
 }
 
 .container {
@@ -101,7 +108,7 @@ body {
   /* flex-direction: column; */
 }
 
-.section-title {
+.title {
   font-family: 'Inter-600';
   font-size: 14px;
   line-height: 1.28;
@@ -110,7 +117,7 @@ body {
 .text {
   font-family: 'Inter-400';
   font-size: 12px;
-  line-height: 1.33;
+  line-height: 1.16;
 }
 
 @media only screen and (min-width: 375px) {
