@@ -27,7 +27,7 @@ function drawStars(data) {
       ratingList.push(`
       <li class="recipe-card-list">
           <svg class="recipe-icon-rating active-recipe-icon" width="16" height="16">
-            <use href="/img/icon.svg#icon-star"></use>
+            <use href="./img/icon.svg#icon-star"></use>
           </svg>
         </li>`);
       continue;
@@ -35,7 +35,7 @@ function drawStars(data) {
     ratingList.push(`
         <li class="recipe-card-list">
           <svg class="recipe-icon-rating" width="16" height="16">
-            <use href="/img/icon.svg#icon-star"></use>
+            <use href="./img/icon.svg#icon-star"></use>
           </svg>
         </li>`);
   }
