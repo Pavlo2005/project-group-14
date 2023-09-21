@@ -1,98 +1,110 @@
-@media screen and (min-width: 415px) {
+/* Common styles for all screen sizes */
+.category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.category-list button {
+  border: none;
+  background-color: transparent;
+  color: rgba(5, 5, 5, 0.3);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  transition: color 250ms ease-in-out;
+}
+
+.category-list button.active {
+  color: var(--color-green);
+}
+
+.btn-allCategories {
+  display: inline-flex;
+  padding: 14px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.btn-allCategories:hover {
+  background-color: var(--color-green);
+  color: #f8f8f8;
+}
+
+/* .btn-allCategories:active {
+  background-color: var(--color-green);
+  color: #f8f8f8;
+} */
+
+.sidebar {
+  width: 326px;
+  height: 198px;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: rgba(5, 5, 5, 0.18);
+}
+
+/* Media Query for Mobile - 320px to 375px */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+  /* Adjust styles for mobile */
+  /* .btn-allCategories {
+    padding: 10px 20px;
+  } */
   .category-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-
-  .category-list button {
-    border: none;
-    background-color: transparent;
-    color: rgba(5, 5, 5, 0.3);
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    transition: color 250ms ease-in-out;
-  }
-  .category-list button.active {
-    color: var(--color-green);
-  }
-  .btn-allCategories {
-    display: inline-flex;
-    padding: 14px 28px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 15px;
-    border: 1px solid rgba(5, 5, 5, 0.2);
-
-    color: rgba(5, 5, 5, 0.5);
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: 24px;
-  }
-
-  .btn-allCategories:hover {
-    background-color: var(--color-green);
-    color: #f8f8f8;
-  }
-  .sidebar {
-    width: 326px;
-    height: 19px;
-    padding: 0px;
-    overflow-y: scroll;
-  }
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    background: rgba(5, 5, 5, 0.18);
+    gap: 12px;
   }
 }
 
-@media screen and (max-width: 414px) {
-}
-
-@media screen and (min-width: 768px) {
+/* Media Query for Mobile and Tablet - 320px to 768px */
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  /* Shared styles for mobile and tablet */
   .btn-allCategories {
-    margin-bottom: 42px;
+    margin-bottom: 30px;
   }
-
   .sidebar {
     width: 176px;
     height: 416px;
-    padding: 0px;
-    overflow-y: scroll;
-  }
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 12px;
-    background: rgba(5, 5, 5, 0.18);
-  }
-  .category-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
   }
 }
 
+/* Media Query for Tablet - 768px to 1280px */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  /* Adjust styles for tablet */
+  .btn-allCategories {
+    margin-bottom: 32px;
+  }
+  .sidebar {
+    width: 176px;
+    height: 416px;
+  }
+}
+
+/* Media Query for Desktop - 1280px and above */
 @media screen and (min-width: 1280px) {
+  /* Adjust styles for desktop */
+  .btn-allCategories {
+    margin-bottom: 42px;
+  }
   .sidebar {
     width: 235px;
     height: 416px;
-    padding: 0px;
-    /* overflow-y: scroll; */
   }
 }
