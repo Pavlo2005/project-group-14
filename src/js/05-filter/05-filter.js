@@ -6,6 +6,8 @@ import { servicesList } from "./services-list";
 import { createListArea } from "./create-list";
 import { createListIngredients } from "./create-list";
 import { refreshDich } from '../06-dishes/06-dishes';
+import { appearanceCategory } from '../03-categories/03-categories';
+import { appearancePopRecipes } from '../04-popular-recips/04-popular-recips';
 
 const elements = {
     loader: document.querySelector('.filter-loader'),
@@ -97,6 +99,8 @@ async function addIngredients() {
     // прибирання лоадера після загрузки контенту
 
     elements.searchForm.hidden = false;
+    appearanceCategory();
+    appearancePopRecipes();
     elements.loader.classList.replace('filter-loader', 'filter-loader-hidden');
     refreshDich();
 }
