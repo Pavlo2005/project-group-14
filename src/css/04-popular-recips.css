@@ -3,6 +3,11 @@
   max-width: 335px;
 }
 
+.precipes-hidden {
+  visibility: hidden;
+  display: none;
+}
+
 .precipes-title-text {
   /* Basic styles */
   padding-bottom: 20px;

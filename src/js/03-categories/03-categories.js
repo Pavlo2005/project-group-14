@@ -3,6 +3,11 @@ const categoryList = document.getElementById('categoryList');
 const allCategoriesButton = document.getElementById('allCategories');
 const recipeContainer = document.querySelector('.recipe-container');
 const recipeModal = document.getElementById('recipeModal');
+const categorySection = document.getElementById('js-category-section');
+
+export function appearanceCategory() {
+  categorySection.classList.replace('category-hidden', 'category');
+}
 
 // Sample API data
 const categories = [
