@@ -9,8 +9,8 @@
     integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <script type="module" crossorigin src="/project-group-14/assets/12-scroll-up-button-3636b922.js"></script>
-    <link rel="stylesheet" href="/project-group-14/assets/12-scroll-up-button-65e7b587.css">
+    <script type="module" crossorigin src="/project-group-14/assets/12-scroll-up-button-9f280174.js"></script>
+    <link rel="stylesheet" href="/project-group-14/assets/12-scroll-up-button-1b627b79.css">
   </head>
   <body>
     <!-- Header -->
@@ -73,9 +73,11 @@
 
       
 
-      <!-- Categories -->
+      <div class="container main-container-recips">
+        <div>
+          <!-- Categories -->
 
-      <section class="category-section">
+          <section class="category-section category-hidden" id="js-category-section">
   <button class="btn-allCategories" id="allCategories">All categories</button>
   <div class="sidebar">
     <div class="category-list" id="categoryList"></div>
@@ -87,11 +89,9 @@
 <script src="../js/03-categories/03-categories.js"></script>
 
 
-      <div class="container main-container-recips">
-        <div>
           <!-- Popular-recips -->
 
-          <div class="precipes-title">
+          <div class="precipes-title precipes-hidden" id="js-precipes">
     <h2 class="precipes-title-text">Popular recipes</h2>
     <div class="precipes-list js-popular-recipes js-dish-page-favorite">
     </div>
