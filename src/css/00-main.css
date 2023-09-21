@@ -1,0 +1,20 @@
+.main-container-recips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 32px 40px;
+    flex-direction: row !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container-recips {
+        flex-wrap: nowrap;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .main-container-recips {
+        gap: 36px;
+    }
+}
