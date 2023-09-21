@@ -16,9 +16,7 @@
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
 @import url('./10-loader.css');
-@import url('./11-recipe-card.css');
-@import url('./12-scroll-up-button.css');
-
+@import url('./13-modal-order-now.css');
 
 :root {
   --color-green: #9BB537;
