@@ -174,7 +174,7 @@
 }
 
 .star-rating__input {
-  /* display: none; */
+  display: none;
 }
 
 .star-rating__ico:focus,
@@ -182,12 +182,11 @@
   fill: var(--color-yellow);
 }
 
-.star-rating__ico:hover:before,
+/* .star-rating__ico:hover:before,
 .star-rating__ico:hover ~ .b-star-rating__ico:before,
 .star-rating__input:checked ~ .star-rating__ico:before {
-  /* content: '\f005'; */
-  fill: gold;
-}
+  stroke: gold;
+} */
 
 .reting-modal-label {
   /* Basic styles */
