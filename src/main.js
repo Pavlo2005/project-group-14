@@ -8,5 +8,4 @@ import './js/07-menu/07-menu.js';
 import './js/08-dish-page/08-dish-page.js';
 import './js/09-favorites/09-favorites.js';
 import './js/11-modal-reting/11-modal-reting.js';
-
 import './js/12-scroll-up-button/12-scroll-up-button.js';
