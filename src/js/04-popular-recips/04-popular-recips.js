@@ -1,6 +1,12 @@
 const popRecipesList = document.querySelector('.js-popular-recipes');
 let data;
 
+const precipesSection = document.getElementById('js-precipes');
+
+export function appearancePopRecipes() {
+  precipesSection.classList.replace('precipes-hidden', 'precipes');
+}
+
 popRecipesFitchList();
 
 // ========================функція запросу з бекенду
@@ -14,6 +20,7 @@ async function popRecipesFitch() {
 }
 
 // ========================функція розмітки
+
 async function popRecipesFitchList() {
   await popRecipesFitch();
 

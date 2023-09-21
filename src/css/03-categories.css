@@ -1,4 +1,13 @@
 /* Common styles for all screen sizes */
+.category-section {
+  margin-bottom: 40px;
+}
+
+.category-hidden {
+  visibility: hidden;
+  display: none;
+}
+
 .category-list {
   display: flex;
   flex-direction: column;
@@ -64,6 +73,7 @@
 
 /* Media Query for Mobile - 320px to 375px */
 @media screen and (min-width: 320px) and (max-width: 375px) {
+
   /* Adjust styles for mobile */
   /* .btn-allCategories {
     padding: 10px 20px;
@@ -75,10 +85,12 @@
 
 /* Media Query for Mobile and Tablet - 320px to 768px */
 @media screen and (min-width: 375px) and (max-width: 768px) {
+
   /* Shared styles for mobile and tablet */
   .btn-allCategories {
     margin-bottom: 30px;
   }
+
   .sidebar {
     width: 176px;
     height: 416px;
@@ -87,10 +99,19 @@
 
 /* Media Query for Tablet - 768px to 1280px */
 @media screen and (min-width: 768px) and (max-width: 1280px) {
+
   /* Adjust styles for tablet */
+
+  .category-section {
+    padding-top: 32px;
+
+    margin-bottom: 64px;
+  }
+
   .btn-allCategories {
     margin-bottom: 32px;
   }
+
   .sidebar {
     width: 176px;
     height: 416px;
@@ -99,10 +120,19 @@
 
 /* Media Query for Desktop - 1280px and above */
 @media screen and (min-width: 1280px) {
+
   /* Adjust styles for desktop */
+
+  .category-section {
+    padding-top: 26px;
+
+    margin-bottom: 64px;
+  }
+
   .btn-allCategories {
     margin-bottom: 42px;
   }
+
   .sidebar {
     width: 235px;
     height: 416px;
