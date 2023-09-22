@@ -1,10 +1,13 @@
+import spritesheet from "../../img/icon.svg";
+
+
 export function createMarkupRecipe(data) {
   const markup = data
     .map(({ _id, preview, title, description, rating }) => {
       drawStars(rating);
       return `<div class="recipe-card-container js-open-dish" data-id="${_id}" style="background-image: url('${preview}')">
             <svg class="recipe-icon-heart" width="22" height="22">
-              <use href="/img/icon.svg#icon-heart"></use>
+              <use href="${spritesheet}#icon-heart"></use>
             </svg>
             <h2 class="recipe-card-title">${title}</h2>
             <p class="recipe-card-text">${description}</p>
@@ -27,7 +30,7 @@ function drawStars(data) {
       ratingList.push(`
       <li class="recipe-card-list">
           <svg class="recipe-icon-rating active-recipe-icon" width="16" height="16">
-            <use href="/img/icon.svg#icon-star"></use>
+            <use href="${spritesheet}#icon-star"></use>
           </svg>
         </li>`);
       continue;
@@ -35,7 +38,7 @@ function drawStars(data) {
     ratingList.push(`
         <li class="recipe-card-list">
           <svg class="recipe-icon-rating" width="16" height="16">
-            <use href="/img/icon.svg#icon-star"></use>
+            <use href="${spritesheet}#icon-star"></use>
           </svg>
         </li>`);
   }

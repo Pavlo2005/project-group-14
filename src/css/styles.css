@@ -5,6 +5,7 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./00-main.css');
 @import url('./01-header.css');
 @import url('./02-introduction.css');
 @import url('./03-categories.css');
@@ -15,8 +16,7 @@
 @import url('./08-dish-page.css');
 @import url('./09-favorites.css');
 @import url('./10-loader.css');
-@import url('./11-recipe-card.css');
-
+@import url('./13-modal-order-now.css');
 
 :root {
   --color-green: #9BB537;

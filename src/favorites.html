@@ -15,12 +15,10 @@
 
 <body>
   <!-- Header -->
-
-  <!-- prettier-ignore -->
   <load ="partials/01-header.html" />
 
-  <!-- Hero -->
   <div class="container favorites">
+    <!-- Hero -->
     <div class="fav-hero-container">
     </div>
     <!-- Categories -->
@@ -28,19 +26,17 @@
 
     </ul>
     <!-- Recipes -->
-    <div class="fav-recipes js-dish-page-button"></div>
+    <div class="fav-recipes js-dish-page-favorite"></div>
     <!-- No favorites -->
     <div class="fav-none">
       <svg class="fav-none-icon" width="68" height="58">
-        <use href="/img/icon.svg#icon-favorites"></use>
       </svg>
       <p>It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that
         you like to your favorites for easier access in the future.</p>
     </div>
   </div>
 
-  <script type="module" src="/main.js"></script>
-  <script type="module" src="/js/09-favorites/09-favorites.js"></script>
+  <script type="module" src="/favorites.js"></script>
 </body>
 
 </html>

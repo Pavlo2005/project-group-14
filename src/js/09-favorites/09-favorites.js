@@ -5,19 +5,31 @@ TODO: spread the categories to the screen edge
 
 import { createMarkupRecipe } from "../11-recipe-card/recipe-card"
 import { getRecipesByID } from "./09-favorites-api"
+import spritesheet from "../../img/icon.svg";
 
+// sample localStorage recipes
 // const favoriteRecipes = ["6462a8f74c3d0ddd288980d4", "6462a8f74c3d0ddd28897fc1", "6467fb9d3d8125271a59219e", "6462a8f74c3d0ddd28897fbc", "6462a8f74c3d0ddd28897fb9", "6462a8f74c3d0ddd28897fdf", "6462a8f74c3d0ddd28897fc2"]
 // localStorage.setItem("favorites", JSON.stringify(favoriteRecipes));
 
-const localFavorites = JSON.parse(localStorage.getItem('favorites'))
+const localFavorites = JSON.parse(localStorage.getItem('favorites'));
 const elements = {
   recipes: document.querySelector(".fav-recipes"),
   noFavs: document.querySelector(".fav-none"),
   hero: document.querySelector(".fav-hero-container"),
-  categories: document.querySelector(".fav-categories")
+  categories: document.querySelector(".fav-categories"),
+  favNoneImg: document.querySelector(".fav-none-icon"),
+  homeNav: document.querySelector(".js-home-link"),
+  favNav: document.querySelector(".js-fav-link")
 }
 
-serviceFavorites(localFavorites)
+// adding relative path to icons
+elements.favNoneImg.insertAdjacentHTML('beforeend', `<use href="${spritesheet}#icon-favorites"></use>`);
+
+// switching active link 
+elements.homeNav.classList.replace('home-link', 'favlink');
+elements.favNav.classList.replace('fav-link', 'home-link');
+
+serviceFavorites(localFavorites);
 
 async function serviceFavorites(favs) {
   // checking if there's any data in localStorage
