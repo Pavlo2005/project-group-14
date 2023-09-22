@@ -19,10 +19,10 @@ const observer = new IntersectionObserver(payload => {
     }
 }, options);
 
-
 function refreshDich() {
     element.innerHTML = '';
     currentPageDich = 1;
+    addDich(dataElements);
     observer.observe(guard);
 }
 
@@ -30,6 +30,8 @@ function refreshDich() {
 
 async function addDich({ time, ingredient, value, area }) {
     try {
+        console.log(time);
+
         const data = await servicesAddDich(time, ingredient, value, area, currentPageDich);
 
         if (currentPageDich < data.totalPages) {
@@ -45,4 +47,4 @@ async function addDich({ time, ingredient, value, area }) {
 }
 
 
-export { refreshDich };
+export { refreshDich, addDich };
