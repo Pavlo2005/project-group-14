@@ -80,7 +80,7 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
     <div class="rating-modal modal" data-modal="1">
         <button type="button" class="js-modal-close rating-modal-close-btn">
             <svg class="rating-modal-close-icon">
-                <use href="/project-group-14/assets/icon-3c492b1f.svg##icon-cross"></use>
+                <use href="/project-group-14/assets/icon-3c492b1f.svg#icon-cross"></use>
             </svg>
         </button>
         <h2 class="rating-modal-title">Rating</h2>
@@ -96,7 +96,7 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
                         value="1" required >
                     <label class="star-rating-ico fa fa-star-o fa-lg" for="star-rating-1"
                         title="1 out of 5 stars"><svg class="rating-modal-star-icon ">
-                            <use href="/project-group-14/assets/icon-3c492b1f.svg##icon-star"></use>
+                            <use href="/project-group-14/assets/icon-3c492b1f.svg#icon-star"></use>
                         </svg>
                     </label>
                 </li>
@@ -105,7 +105,7 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
                         value="2">
                     <label class="star-rating-ico fa fa-star-o fa-lg" for="star-rating-2"
                         title="2 out of 5 stars"><svg class="rating-modal-star-icon ">
-                            <use href="/project-group-14/assets/icon-3c492b1f.svg##icon-star"></use>
+                            <use href="/project-group-14/assets/icon-3c492b1f.svg#icon-star"></use>
                         </svg></label>
                 </li>
                 <li class="rating-item-personal">
@@ -113,7 +113,7 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
                         value="3">
                     <label class="star-rating-ico fa fa-star-o fa-lg" for="star-rating-3"
                         title="3 out of 5 stars"><svg class="rating-modal-star-icon ">
-                            <use href="/project-group-14/assets/icon-3c492b1f.svg##icon-star"></use>
+                            <use href="/project-group-14/assets/icon-3c492b1f.svg#icon-star"></use>
                         </svg></label>
                 </li>
                 <li class="rating-item-personal">
@@ -121,7 +121,7 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
                         value="4">
                     <label class="star-rating-ico fa fa-star-o fa-lg" for="star-rating-4"
                         title="4 out of 5 stars"><svg class="rating-modal-star-icon ">
-                            <use href="/project-group-14/assets/icon-3c492b1f.svg##icon-star"></use>
+                            <use href="/project-group-14/assets/icon-3c492b1f.svg#icon-star"></use>
                         </svg></label>
                 </li>
                 <li class="rating-item-personal">
@@ -129,7 +129,7 @@ Notiflix needs to be appended to the "<`+t+'>" element, but you called it before
                         value="5" checked >
                     <label class="star-rating-ico fa fa-star-o fa-lg" for="star-rating-5"
                         title="5 out of 5 stars"><svg class="rating-modal-star-icon ">
-                            <use href="/project-group-14/assets/icon-3c492b1f.svg##icon-star"></use>
+                            <use href="/project-group-14/assets/icon-3c492b1f.svg#icon-star"></use>
                         </svg></label>
                 </li>
             </ul>
