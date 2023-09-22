@@ -19,6 +19,7 @@
 @import url('./11-recipe-card.css');
 @import url('./11-modal-reting.css');
 @import url('./12-scroll-up-button.css');
+@import url('./13-modal-order-now.css');
 
 :root {
   --color-green: #9bb537;
