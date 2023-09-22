@@ -66,7 +66,7 @@ const modalWindovs = `
              
           </div>              
             <input class="js-rating-email rating-modal-form-input" type="email" name="email"
-                  id="modal-email" placeholder="Enter email" required/>
+                  id="modal-email" placeholder="Enter email" required />
             
             <button type="submit" class="js-rating-submit rating-button-submit rating-item-personal">Send</button>
         </form>
