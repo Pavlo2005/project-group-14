@@ -1,7 +1,7 @@
 import { serviceDish } from './08-tasty-treats-API';
 import { createMurkupDP } from './08-create-markup';
 import { changeFavorites } from './08-handler-favorites-LS';
-// import {handlerClickReting} from '../11-modal-reting/11-modal-reting.js'
+import {handlerClickReting} from '../11-modal-reting/11-modal-reting.js'
 
 const favoritList = document.querySelector('.js-dish-page-favorite');
 const dishList = document.querySelector('.js-dish-page-button');
@@ -49,7 +49,11 @@ function openDishPage(evt) {
         changeFavorites(recipeDish._id);
       }
       
-      // giveRatingBtn.addEventListener('click', handlerClickReting(recipeDish._id));
+      giveRatingBtn.addEventListener('click', openModalRating);
+
+      function openModalRating() {
+        handlerClickReting(recipeDish._id);
+}
       
 
       closeBtn.addEventListener('click', handlerCloseBtn);
@@ -77,7 +81,7 @@ function openDishPage(evt) {
 
       function closeModal() {
         changeFavoriteBtn.removeEventListener('click', handlerFavorite);
-        // giveRatingBtn.addEventListener('click', handlerClickReting(recipeDish._id));
+        giveRatingBtn.addEventListener('click', openModalRating);
         closeBtn.removeEventListener('click', handlerCloseBtn);
         overlay.removeEventListener('click', handlerOverlayClick);
         document.removeEventListener('keydown', handlerEsc);
