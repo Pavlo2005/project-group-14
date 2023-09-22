@@ -6,6 +6,8 @@ TODO: spread the categories to the screen edge
 import { createMarkupRecipe } from "../11-recipe-card/recipe-card"
 import { getRecipesByID } from "./09-favorites-api"
 import spritesheet from "../../img/icon.svg";
+import '../08-dish-page/08-dish-page';
+import { changeFavorites } from '../08-dish-page/08-handler-favorites-LS';
 
 // sample localStorage recipes
 // const favoriteRecipes = ["6462a8f74c3d0ddd288980d4", "6462a8f74c3d0ddd28897fc1", "6467fb9d3d8125271a59219e", "6462a8f74c3d0ddd28897fbc", "6462a8f74c3d0ddd28897fb9", "6462a8f74c3d0ddd28897fdf", "6462a8f74c3d0ddd28897fc2"]
@@ -45,6 +47,17 @@ async function serviceFavorites(favs) {
     const data = await getRecipesByID(favs);
     elements.recipes.insertAdjacentHTML("beforeend", createMarkupRecipe(data))
     elements.categories.insertAdjacentHTML("beforeend", renderCategories(data))
+
+    const changeFavoriteBtn = document.querySelector(
+      '.recipe-icon-heart'
+    );
+    changeFavoriteBtn.addEventListener('click', handlerFavorite);
+    function handlerFavorite(evt) {
+      const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
+      evt.currentTarget.classList.toggle(".active-recipe-icon");
+      const currentDish = evt.target.closest('.js-open-dish');
+      changeFavorites(currentDish.dataset.id);
+    }
 
   } catch (error) {
     console.log(error);
