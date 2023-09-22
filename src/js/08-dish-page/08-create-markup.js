@@ -1,3 +1,5 @@
+import iconX from "../../img/icon.svg";
+
 function createMurkupDP(recipe) {
   const {
     _id,
@@ -32,7 +34,7 @@ function createMurkupDP(recipe) {
       ratingList.push(`
       <li class="recipe-modal-rating-item">
           <svg class="recipe-modal-rating-icon active-icon-dp" width="18" height="18">
-            <use href="/img/icon.svg#icon-star"></use>
+            <use href="${iconX}#icon-star"></use>
           </svg>
         </li>`);
       continue;
@@ -40,7 +42,7 @@ function createMurkupDP(recipe) {
     ratingList.push(`
         <li class="recipe-modal-rating-item">
           <svg class="recipe-modal-rating-icon" width="18" height="18">
-            <use href="/img/icon.svg#icon-star"></use>
+            <use href="${iconX}#icon-star"></use>
           </svg>
         </li>`);
   }
@@ -70,7 +72,7 @@ function createMurkupDP(recipe) {
   <div class="recipe-modal js-recipe-modal">
     <button class="recipe-modal-close-btn js-close-buttton-dp" type="button">
       <svg class="recipe-modal-close-icon">
-        <use href="/img/icon.svg#icon-cross"></use>
+        <use href="${iconX}#icon-cross"></use>
       </svg>
     </button>
     <h2 class="recipe-modal-title desktop">${title}</h2>
