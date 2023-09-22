@@ -17,9 +17,9 @@ const modalWindovs = `
         <form class="js-rating-form-input rating-form-input " name="modal-form">
           <div class="rating-form-star">
 
-              <p class="js-rating-number rating-number">${selectedRating.toFixed(
-                2
-              )}</p>
+              <p class="js-rating-number rating-number">
+                ${selectedRating.toFixed(2)}
+              </p>
                <ul class="js-rating-list rating-list">
                 <li class="rating-item-personal">
                     <input class="star-rating-input" id="star-rating-1" type="radio" name="rating"
@@ -167,7 +167,7 @@ async function handlerClickRet(evt) {
 // ==================функція закриття модалки
 function handlerClickClose() {
   refs.modal.classList.toggle('rating-modal-is-hidden');
-  refs.modal.innerHTML = '';
+  refs.modal.remove();
 }
 
 export { handlerClickReting };
