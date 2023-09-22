@@ -21,6 +21,7 @@
   color: rgba(5, 5, 5, 0.3);
   font-family: Inter;
   font-size: 16px;
+  font-family: 'Inter-500';
   font-weight: 500;
   line-height: 20px;
   transition: color 250ms ease-in-out;
@@ -37,10 +38,12 @@
   align-items: center;
   gap: 10px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
+  border: 1px solid var(--color-light-border);
+  color: var(--color-solihth-text);
+  background-color: var(--color-gray);
   font-family: Inter;
   font-size: 18px;
+  font-family: 'Inter-500';
   font-weight: 500;
   margin-bottom: 24px;
 }
@@ -56,8 +59,8 @@
 } */
 
 .sidebar {
-  width: 326px;
-  height: 198px;
+  width: 326px !important;
+  height: 198px !important;
   padding: 0;
   overflow-y: scroll;
 }
@@ -90,11 +93,6 @@
   .btn-allCategories {
     margin-bottom: 30px;
   }
-
-  .sidebar {
-    width: 176px;
-    height: 416px;
-  }
 }
 
 /* Media Query for Tablet - 768px to 1280px */
@@ -113,8 +111,8 @@
   }
 
   .sidebar {
-    width: 176px;
-    height: 416px;
+    width: 176px !important;
+    height: 416px !important;
   }
 }
 
@@ -134,7 +132,7 @@
   }
 
   .sidebar {
-    width: 235px;
-    height: 416px;
+    width: 235px !important;
+    height: 416px !important;
   }
 }
