@@ -1,0 +1,269 @@
+.rating-overlay-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  background-image: linear-gradient(
+    var(--color-solihth-text),
+    var(--color-solihth-text)
+  );
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+
+  transition: var(--standard-transition);
+}
+
+.rating-modal {
+  position: absolute;
+  top: calc(50%);
+  left: calc(50%);
+  transform: translate(-50%, -50%);
+
+  padding: 20px 20px;
+
+  width: 100%;
+  max-width: 335px;
+  height: auto;
+  overflow: scroll;
+
+  border-radius: 15px;
+
+  background-color: var(--color-white);
+  z-index: 101;
+
+  transition: var(--standard-transition);
+}
+
+.rating-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  stroke: var(--color-black2);
+}
+
+.rating-modal-close-btn:hover,
+.rating-modal-close-btn:focus {
+  background-color: var(--color-green);
+  stroke: var(--color-white);
+
+  transition-property: stroke;
+  transition: var(--standard-transition);
+}
+
+.rating-modal-close-icon {
+  /* Basic styles */
+  width: 100%;
+  height: 100%;
+}
+
+.rating-modal-title {
+  color: var(--color-black2);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.28;
+}
+
+.rating-form-input {
+  margin-top: 4px;
+}
+
+.rating-form-star {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-number {
+  color: var(--color-black2);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.rating-list {
+  display: flex;
+  gap: 2px;
+
+  height: 24px;
+
+  fill: #d9d9d9;
+}
+
+.rating-modal-star-icon {
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+.rating-item-personal {
+  width: 100%;
+}
+
+.star-rating-input {
+  display: none;
+}
+
+.star-rating-ico:focus,
+.star-rating-ico:hover,
+.star-rating-ico:active {
+  fill: var(--color-yellow);
+}
+
+.rating-modal-form-input,
+.rating-button-submit {
+  width: 100%;
+  max-width: 295px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  border: 1px solid var(--color-light-border);
+
+  border-radius: 16px;
+
+  outline: transparent;
+
+  transition: border-color;
+  transition-duration: 250ms;
+  font-size: 14px;
+  line-height: 1.21;
+
+  transition-timing-function: var(--transition-duration);
+
+  font-size: 14px;
+  line-height: 1.21;
+  color: var(--color-logo-ligt);
+}
+
+.rating-modal-form-input {
+  /* Basic styles */
+  margin-top: 24px;
+  padding-left: 18px;
+}
+
+.rating-item {
+  max-width: 295px;
+  height: 46px;
+
+  border: 1px solid var(--color-light-border);
+}
+
+.rating-modal-form-input:focus,
+.rating-modal-form-comment:focus {
+  border-color: var(--color-social-icon);
+}
+
+.rating-button-submit {
+  /* Basic styles */
+  display: block;
+  margin-top: 14px;
+
+  cursor: pointer;
+
+  background-color: var(--color-green);
+  border: none;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+
+  color: var(--color-white);
+
+  transition: background-color;
+  transition-timing-function: var(--transition-duration);
+}
+
+.rating-button-submit:hover,
+.rating-button-submit:focus {
+  color: var(--color-black2);
+}
+
+.rating-modal-is-hidden {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Tablet screen >= 768 */
+@media only screen and (min-width: 768px) {
+  .rating-modal {
+    padding: 32px;
+
+    max-width: none;
+    width: 424px;
+  }
+  .rating-modal-close-btn {
+    top: 16px;
+    right: 16px;
+
+    width: 24px;
+    height: 24px;
+  }
+  .rating-modal-close-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .rating-list-personal {
+    flex-wrap: nowrap;
+  }
+  .rating-modal-label {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+  .rating-modal-form-input,
+  .rating-button-submit {
+    max-width: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  .rating-modal-form-input {
+    /* height: 66px; */
+    max-width: none;
+    margin-top: 32px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 18px;
+
+    font-size: 16px;
+    line-height: 1.22;
+  }
+  .rating-button-submit {
+    /* width: 133px; */
+    margin-top: 16px;
+
+    height: 48px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.21;
+  }
+}
