@@ -32,7 +32,7 @@
   width: 100%;
   max-width: 335px;
   height: auto;
-  overflow: scroll;
+  /* overflow: scroll; */
 
   border-radius: 15px;
 
