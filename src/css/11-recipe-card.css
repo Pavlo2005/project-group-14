@@ -97,6 +97,12 @@
   stroke: #f8f8f8;
 }
 
+.recipe-icon-heart.active-heart {
+  fill: var(--color-gray);
+  opacity: 1;
+  stroke: var(--color-gray);
+}
+
 .recipe-btn {
   padding: 8px 14px;
   border-radius: 8px;
