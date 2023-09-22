@@ -10,11 +10,10 @@ const guard = document.querySelector('.js-dich-block-gward');
 // Observer
 
 const options = {
-    rootMargin: "100px",
+    rootMargin: "200px",
 }
 
 const observer = new IntersectionObserver(payload => {
-    console.log(payload);
     if (payload[0].isIntersecting) {
         addDich(dataElements);
     }
@@ -25,7 +24,6 @@ function refreshDich() {
     element.innerHTML = '';
     currentPageDich = 1;
     observer.observe(guard);
-    console.log('+');
 }
 
 // функція додавання блюд
@@ -38,7 +36,6 @@ async function addDich({ time, ingredient, value, area }) {
             currentPageDich += 1;
         } else {
             observer.unobserve(guard);
-            console.log('-');
         }
 
         element.insertAdjacentHTML('beforeend', createMarkupRecipe(data.results));
