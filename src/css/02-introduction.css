@@ -69,10 +69,20 @@
   padding: 10px 24px 50px;
 }
 
-.hero-masterclass {
-  display: flex;
-  gap: 8px;
+.swiper {
+  width: 871px;
+  height: 442px;
   overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex !important;
+  gap: 8px;
+
+}
+
+.swiper-scrollbar {
+  height: 20px;
 }
 
 .img-chief {
