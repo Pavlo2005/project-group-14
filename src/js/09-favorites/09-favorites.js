@@ -48,13 +48,16 @@ async function serviceFavorites(favs) {
     elements.recipes.insertAdjacentHTML("beforeend", createMarkupRecipe(data))
     elements.categories.insertAdjacentHTML("beforeend", renderCategories(data))
 
-    const changeFavoriteBtn = document.querySelector(
-      '.recipe-icon-heart'
-    );
-    changeFavoriteBtn.addEventListener('click', handlerFavorite);
+    const allHearts = document.querySelectorAll('.recipe-icon-heart');
+   
+    for (const heart of [...allHearts]) {
+      heart.classList.add("active-heart");
+    }
+
+    elements.recipes.addEventListener('click', handlerFavorite);
     function handlerFavorite(evt) {
-      const favoritesLS = JSON.parse(localStorage.getItem('favorites')) ?? [];
-      evt.currentTarget.classList.toggle(".active-recipe-icon");
+      const currentHeart = evt.target.closest('.recipe-icon-heart');
+      currentHeart.classList.toggle("active-heart");
       const currentDish = evt.target.closest('.js-open-dish');
       changeFavorites(currentDish.dataset.id);
     }

@@ -8,6 +8,7 @@ import { createListIngredients } from "./create-list";
 import { refreshDich } from '../06-dishes/06-dishes';
 import { appearanceCategory } from '../03-categories/03-categories';
 import { appearancePopRecipes } from '../04-popular-recips/04-popular-recips';
+import { addDich } from '../06-dishes/06-dishes';
 
 const elements = {
     loader: document.querySelector('.filter-loader'),
@@ -105,11 +106,18 @@ async function addIngredients() {
     refreshDich();
 }
 
+elements.searchForm.addEventListener('submit', handlerSubmit);
+
+function handlerSubmit(evt) {
+    evt.preventDefault();
+}
+
 elements.searchForm.addEventListener('change', handlerChange);
 
 // функція відслідковування змін в полях воду
 
-function handlerChange() {
+function handlerChange(evt) {
+
     dataElements.value = elements.input.value;
     dataElements.time = elements.time.value;
     dataElements.area = elements.area.value;
@@ -122,7 +130,8 @@ elements.clearButton.addEventListener('click', handlerClickClear);
 
 // функція видалення вмісту з полів воду
 
-function handlerClickClear() {
+function handlerClickClear(evt) {
+    evt.preventDefault();
 
     timeSelect.destroy();
     ingredientsSelect.destroy();
@@ -138,7 +147,7 @@ function handlerClickClear() {
     dataElements.area = "";
     dataElements.ingredient = "";
 
-    refreshDich();
+
 
     timeSelect = new SlimSelect({
         select: time,
@@ -179,4 +188,6 @@ function handlerClickClear() {
             }
         }
     });
+
+    refreshDich();
 }
