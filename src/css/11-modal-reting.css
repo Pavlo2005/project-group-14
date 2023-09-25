@@ -137,6 +137,10 @@
   fill: var(--color-yellow);
 }
 
+.star-rating-ico-active {
+  fill: var(--color-yellow);
+}
+
 .rating-modal-form-input,
 .rating-button-submit {
   width: 100%;
